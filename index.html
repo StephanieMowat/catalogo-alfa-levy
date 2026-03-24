@@ -700,6 +700,28 @@ footer ul li a:hover{color:var(--cream);}
       </div>
     </div>
 
+    <div class="fabric-card" onclick="openFabric('JACQUARD_GITA')">
+      <img src="images/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Jacquard Gita</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.</p>
+        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('JACQUARD_KASHIMIR')">
+      <img src="images/JACQUARD_KASHIMIR/page-01.jpg" alt="Jacquard Kashimir" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Jacquard Kashimir</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Trama jacquard com padrão exclusivo inspirado em motivos orientais. Sofisticação e elegância para coleções diferenciadas.</p>
+        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
     <div class="fabric-card" onclick="openFabric('JACQUARD_LEAF')">
       <img src="images/JACQUARD_LEAF/page-01.jpg" alt="Jacquard Leaf" loading="lazy">
       <div class="fabric-overlay"></div>
@@ -722,13 +744,13 @@ footer ul li a:hover{color:var(--cream);}
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_GITA')">
-      <img src="images/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
+    <div class="fabric-card" onclick="openFabric('JACQUARD_NILO')">
+      <img src="images/JACQUARD_NILO/page-01.jpg" alt="Jacquard Nilo" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
-        <span class="fabric-name">Jacquard Gita</span>
+        <span class="fabric-name">Jacquard Nilo</span>
         <span class="fabric-tag">Moda Praia · Moda</span>
-        <p class="fabric-desc">Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.</p>
+        <p class="fabric-desc">Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Sofisticação e elegância para coleções diferenciadas.</p>
         <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
@@ -751,6 +773,17 @@ footer ul li a:hover{color:var(--cream);}
         <span class="fabric-name">Malte</span>
         <span class="fabric-tag">Moda Praia · Moda</span>
         <p class="fabric-desc">Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.</p>
+        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('MARSELHA')">
+      <img src="images/MARSELHA/page-01.jpg" alt="Marselha" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Marselha</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Trama jacquard com padrão exclusivo inspirado em motivos marinhos. Sofisticação e elegância para coleções diferenciadas.</p>
         <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
@@ -940,11 +973,14 @@ const FABRICS = {
   JACQUARD_BROCADO:    { name:'Jacquard Brocado',    tag:'Moda Praia · Moda',               desc:'Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.', pages:18, colorsTitle:'Variações' },
   JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
   JACQUARD_CONCHINHAS: { name:'Jacquard Conchinhas', tag:'Moda Praia · Moda',               desc:'Variação delicada do jacquard conchas com padrão menor e detalhes refinados.', pages:8,  colorsTitle:'Variações' },
+  JACQUARD_GITA:       { name:'Jacquard Gita',       tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:3, colorsTitle:'Variações' },
+  JACQUARD_KASHIMIR:   { name:'Jacquard Kashimir',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos orientais. Sofisticação e elegância para coleções diferenciadas.', pages:2,  colorsTitle:'Variações' },
   JACQUARD_LEAF:       { name:'Jacquard Leaf',       tag:'Moda Praia · Moda',               desc:'Padrão jacquard com motivo folhagem exclusivo. Sofisticação e elegância natural para coleções diferenciadas.', pages:4,  colorsTitle:'Variações' },
   JACQUARD_LINES:      { name:'Jacquard Lines',      tag:'Moda Praia · Moda',               desc:'Trama jacquard com linhas entrelaçadas formando um padrão exclusivo. Elegância e modernidade para suas coleções.', pages:2,  colorsTitle:'Variações' },
-  JACQUARD_GITA:       { name:'Jacquard Gita',       tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:3, colorsTitle:'Variações' },
+  JACQUARD_NILO:       { name:'Jacquard Nilo',       tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Frescor e sofisticação para coleções verão.', pages:2,  colorsTitle:'Variações' },
   JACQUARD_WINNER:     { name:'Jacquard Winner',     tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:6,  colorsTitle:'Variações' },
   MALTE:               { name:'Malte',               tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
+  MARSELHA:            { name:'Marselha',            tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
   ROCKS:               { name:'Rocks',               tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
 };
 
