@@ -132,12 +132,12 @@ nav{
 .fabric-card:hover .fabric-info{transform:translateY(0);}
 .fabric-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--white);display:block;margin-bottom:3px;}
 .fabric-tag{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-.fabric-desc{font-size:12px;color:rgba(196,159,224,0.75);line-height:1.6;opacity:0;transition:opacity 0.4s;}
+.fabric-desc{font-size:12px;color:rgba(196,159,224,0.75);line-height:1.6;opacity:0.45;transition:opacity 0.4s;}
 .fabric-card:hover .fabric-desc{opacity:1;}
 .fabric-cta{
   display:inline-flex;align-items:center;gap:8px;margin-top:14px;
   font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);
-  opacity:0;transform:translateY(8px);transition:opacity 0.4s 0.08s,transform 0.4s 0.08s;
+  opacity:0.5;transform:translateY(4px);transition:opacity 0.4s 0.08s,transform 0.4s 0.08s;
 }
 .fabric-card:hover .fabric-cta{opacity:1;transform:translateY(0);}
 .fabric-pages-badge{
@@ -302,11 +302,51 @@ footer ul li a:hover{color:var(--cream);}
   .fabrics-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
   .fabric-modal-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
 }
-@media(max-width:500px){
-  .fabrics-grid{grid-template-columns:repeat(2,1fr);}
-  .fabric-modal-grid{grid-template-columns:repeat(2,1fr);}
+@media(max-width:600px){
+  /* Cards: dois por linha sem sobreposição */
+  .fabrics-grid{grid-template-columns:repeat(2,1fr);gap:2px;}
+  .fabric-card{aspect-ratio:3/4;}
+
+  /* Info sempre visível no fundo, sem transform */
+  .fabric-info{
+    transform:none !important;
+    padding:16px 12px 14px;
+    background:linear-gradient(to top,rgba(14,8,24,0.97) 0%,rgba(14,8,24,0.55) 70%,transparent 100%);
+  }
+  .fabric-card:hover .fabric-info{transform:none !important;}
+
+  /* Tamanhos menores para caber em 2 colunas */
+  .fabric-name{font-size:17px;margin-bottom:2px;line-height:1.1;}
+  .fabric-tag{font-size:8px;letter-spacing:2px;margin-bottom:6px;}
+
+  /* Descrição sempre visível com opacidade reduzida */
+  .fabric-desc{
+    font-size:11px;line-height:1.5;
+    opacity:0.75 !important;
+    display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+
+  /* CTA menor e sempre visível */
+  .fabric-cta{
+    font-size:8px;letter-spacing:2px;margin-top:8px;
+    opacity:1 !important;transform:none !important;
+  }
+
+  /* Badge menor */
+  .fabric-pages-badge{font-size:8px;padding:3px 8px;top:8px;right:8px;}
+
+  /* Seção header */
+  .cat-section{padding:60px 5vw 0;}
+  .cat-section-title{font-size:clamp(28px,7vw,40px);}
+  .cat-section-desc{font-size:12px;}
+
+  /* Footer */
   .footer-grid{grid-template-columns:1fr;}
-  .footer-address-bar{flex-direction:column;align-items:flex-start;}
+  .footer-address-bar{flex-direction:column;align-items:flex-start;gap:16px;}
+
+  /* Hero cats */
+  .hero-cats{gap:8px;}
+  .hero-cat{padding:7px 18px;font-size:8px;letter-spacing:4px;}
 }
 
 /* SCROLL REVEAL */
@@ -331,6 +371,7 @@ footer ul li a:hover{color:var(--cream);}
   <ul class="nav-links">
     <li><a href="#lisos" class="nav-cat">Lisos</a></li>
     <li><a href="#texturizados" class="nav-cat">Texturizados</a></li>
+    <li><a href="#estampados" class="nav-cat">Estampados</a></li>
     <li><div class="nav-sep"></div></li>
     <li><a href="#contato" class="nav-plain">Contato</a></li>
   </ul>
@@ -357,8 +398,10 @@ footer ul li a:hover{color:var(--cream);}
   <div class="hero-cats">
     <a href="#lisos" class="hero-cat">Lisos</a>
     <a href="#texturizados" class="hero-cat">Texturizados</a>
+    <a href="#estampados" class="hero-cat">Estampados</a>
   </div>
 </section>
+
 
 <div class="band"></div>
 
@@ -374,6 +417,28 @@ footer ul li a:hover{color:var(--cream);}
     <div class="cat-section-line"></div>
   </div>
   <p class="cat-section-desc reveal">Acabamento uniforme e cores sólidas. Versatilidade máxima para coleções modernas e sofisticadas.</p>
+</div>
+
+<div class="fabrics-wrap">
+  <div class="fabrics-grid reveal">
+    <!-- tecidos lisos serão adicionados aqui -->
+  </div>
+</div>
+
+<div class="band"></div>
+
+<!-- ══════════════════════════════════
+     TEXTURIZADOS
+══════════════════════════════════ -->
+<div id="texturizados" class="cat-section">
+  <div class="cat-section-header reveal">
+    <div>
+      <span class="cat-section-label">Categoria</span>
+      <h2 class="cat-section-title">Tecidos <em>Texturizados</em></h2>
+    </div>
+    <div class="cat-section-line"></div>
+  </div>
+  <p class="cat-section-desc reveal">Superfícies com relevo, trama e caráter tátil único. Canelados, bouclês, jacquards, anarrugados e muito mais para coleções com personalidade.</p>
 </div>
 
 <div class="fabrics-wrap">
@@ -401,28 +466,6 @@ footer ul li a:hover{color:var(--cream);}
         <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
-
-  </div>
-</div>
-
-<div class="band"></div>
-
-<!-- ══════════════════════════════════
-     TEXTURIZADOS
-══════════════════════════════════ -->
-<div id="texturizados" class="cat-section">
-  <div class="cat-section-header reveal">
-    <div>
-      <span class="cat-section-label">Categoria</span>
-      <h2 class="cat-section-title">Tecidos <em>Texturizados</em></h2>
-    </div>
-    <div class="cat-section-line"></div>
-  </div>
-  <p class="cat-section-desc reveal">Superfícies com relevo, trama e caráter tátil único. Canelados, bouclês, jacquards, anarrugados e muito mais para coleções com personalidade.</p>
-</div>
-
-<div class="fabrics-wrap">
-  <div class="fabrics-grid reveal">
 
     <div class="fabric-card" onclick="openFabric('LIS')">
       <img src="images/LIS/page-01.jpg" alt="LIS" loading="lazy">
@@ -671,6 +714,28 @@ footer ul li a:hover{color:var(--cream);}
   </div>
 </div>
 
+<div class="band"></div>
+
+<!-- ══════════════════════════════════
+     ESTAMPADOS
+══════════════════════════════════ -->
+<div id="estampados" class="cat-section">
+  <div class="cat-section-header reveal">
+    <div>
+      <span class="cat-section-label">Categoria</span>
+      <h2 class="cat-section-title">Tecidos <em>Estampados</em></h2>
+    </div>
+    <div class="cat-section-line"></div>
+  </div>
+  <p class="cat-section-desc reveal">Padrões e motivos exclusivos tecidos diretamente na fibra. Estampas que agregam identidade e sofisticação às suas coleções.</p>
+</div>
+
+<div class="fabrics-wrap">
+  <div class="fabrics-grid reveal">
+    <!-- tecidos estampados serão adicionados aqui -->
+  </div>
+</div>
+
 <!-- CONTATO -->
 <section class="contato" id="contato">
   <p style="font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Entre em Contato</p>
@@ -702,8 +767,8 @@ footer ul li a:hover{color:var(--cream);}
       <ul>
         <li><a href="#lisos">Lisos</a></li>
         <li><a href="#texturizados">Texturizados</a></li>
+        <li><a href="#estampados">Estampados</a></li>
         <li><a href="#texturizados">Canelados</a></li>
-        <li><a href="#texturizados">Jacquards</a></li>
       </ul>
     </div>
     <div>
@@ -727,11 +792,24 @@ footer ul li a:hover{color:var(--cream);}
     <div class="footer-addr-inner">
       <div class="footer-addr-icon"><svg><use href="#ico-location"/></svg></div>
       <a href="https://share.google/EKA9Mi7fkdc8V5YgF" target="_blank" class="footer-addr-link">
-        <span class="footer-addr-label">Nosso Endereço</span>
-        Rua Anhaia, 456 — Brás, São Paulo – SP · Brasil
+        <span class="footer-addr-label">Levy Têxtil</span>
+        Rua Três Rios, 456 — Bom Retiro, São Paulo – SP · Brasil
       </a>
     </div>
     <a href="https://maps.app.goo.gl/qJCBJizT1huBiMRm9" target="_blank" class="footer-map-btn">
+      <svg><use href="#ico-map"/></svg> Ver no Mapa
+    </a>
+  </div>
+
+  <div class="footer-address-bar">
+    <div class="footer-addr-inner">
+      <div class="footer-addr-icon"><svg><use href="#ico-location"/></svg></div>
+      <a href="https://share.google/OvOwk3jgt5UbZPcwO" target="_blank" class="footer-addr-link">
+        <span class="footer-addr-label">Alfa Têxtil</span>
+        Rua Da Graça, 798 — Bom Retiro, São Paulo – SP · Brasil
+      </a>
+    </div>
+    <a href="https://maps.app.goo.gl/QL4gnc8VSNyhmEXo7" target="_blank" class="footer-map-btn">
       <svg><use href="#ico-map"/></svg> Ver no Mapa
     </a>
   </div>
