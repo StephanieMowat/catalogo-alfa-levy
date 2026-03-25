@@ -300,6 +300,17 @@
       </div>
     </div>
 
+    <div class="fabric-card" onclick="openFabric('CRUNCH_LISTRADO')">
+      <img src="images/TEXTURIZADOS/CRUNCH_LISTRADO/page-01.jpg" alt="Crunch Listrado" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Crunch Listrado</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Textura crunch com listras em relevo. Estilo e personalidade para suas coleções.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
     <div class="fabric-card" onclick="openFabric('DIAMOND')">
       <img src="images/TEXTURIZADOS/DIAMOND/page-01.jpg" alt="Diamond" loading="lazy">
       <div class="fabric-overlay"></div>
@@ -430,6 +441,28 @@
       <div class="fabric-info">
         <span class="fabric-name">LIS</span>
         <span class="fabric-tag">Moda Praia · Fitness · Lingerie</span>
+        <p class="fabric-desc">Tecido texturizado de alta performance com toque macio e excelente recuperação.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('LUX_DUBAI')">
+      <img src="images/TEXTURIZADOS/LUX_DUBAI/page-01.jpg" alt="Lux Dubai" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Lux Dubai</span>
+        <span class="fabric-tag">Fitness · Lingerie</span>
+        <p class="fabric-desc">Tecido texturizado de alta performance com toque macio e excelente recuperação.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('LYCRA_JEANS')">
+      <img src="images/TEXTURIZADOS/LYCRA_JEANS/page-01.jpg" alt="Lycra Jeans" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <div class="fabric-info">
+        <span class="fabric-name">Lycra Jeans</span>
+        <span class="fabric-tag">Fitness · Lingerie</span>
         <p class="fabric-desc">Tecido texturizado de alta performance com toque macio e excelente recuperação.</p>
         <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
@@ -735,6 +768,7 @@ const FABRICS = {
   CREPONADO:           { name:'Creponado',           category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Superfície texturizada e leve para saídas de praia com estilo e personalidade.', pages:10, colorsTitle:'Cores Disponíveis' },
   CROCHE_SANTORINI:    { name:'Crochê Santorini',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Inspiração mediterrânea com textura crochê única. Sofisticação e leveza para coleções verão.', pages:9,  colorsTitle:'Cores Disponíveis' },
   CROCHETE:            { name:'Crochete',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura artesanal com vazados característicos do crochê. Charme e originalidade para peças que chamam atenção.', pages:5,  colorsTitle:'Cores Disponíveis' },
+  CRUNCH_LISTRADO:     { name:'Crunch Listrado',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura crunch com listras em relevo. Estilo e personalidade para suas coleções.', pages:8,  colorsTitle:'Cores Disponíveis' },
   DIAMOND:             { name:'Diamond',             category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.', pages:2,  colorsTitle:'Cores Disponíveis' },
   JACQUARD_BROCADO:    { name:'Jacquard Brocado',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.', pages:18, colorsTitle:'Variações' },
   JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
@@ -747,13 +781,15 @@ const FABRICS = {
   JACQUARD_NILO:       { name:'Jacquard Nilo',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Frescor e sofisticação para coleções verão.', pages:2,  colorsTitle:'Variações' },
   JACQUARD_WINNER:     { name:'Jacquard Winner',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:6,  colorsTitle:'Variações' },
   LIS:                 { name:'LIS',                 category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Lingerie', desc:'Tecido texturizado de alta performance com toque macio e excelente recuperação elástica.', pages:7,  colorsTitle:'Cores Disponíveis' },
+  LUX_DUBAI:           { name:'Lux Dubai',           category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura luxuosa com brilho sutil e caimento impecável. Ideal para peças sofisticadas e elegantes.', pages:2,  colorsTitle:'Cores Disponíveis' },
+  LYCRA_JEANS:         { name:'Lycra Jeans',         category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura inspirada em jeans com toque macio e excelente elasticidade. Versatilidade para peças casuais e de moda praia.', pages:2,  colorsTitle:'Cores Disponíveis' },
   MACRAME:             { name:'Macramê',             category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura artesanal com nós e vazados característicos do macramê. Peças com personalidade e estilo único.', pages:3,  colorsTitle:'Cores Disponíveis' },
   MALIBU:              { name:'Malibu',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:20,  colorsTitle:'Cores Disponíveis' },
   MALTE:               { name:'Malte',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   MARRAKESH:           { name:'Marrakesh',           category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:3,  colorsTitle:'Cores Disponíveis' },
   MARSELHA:            { name:'Marselha',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
   MONTANA:             { name:'Montana',             category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura encorpada com toque macio e caimento estruturado. Ideal para peças com design marcante e durabilidade.', pages:12,  colorsTitle:'Cores Disponíveis' },
-  POINTS:             { name:'Points',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
+  POINTS:              { name:'Points',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   POSITANO:            { name:'Positano',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:4,  colorsTitle:'Cores Disponíveis' },
   ROCKS:               { name:'Rocks',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
   SARDINHA:            { name:'Sardinha',            category:'ESTAMPADOS',      tag:'Moda Praia · Moda',               desc:'Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
