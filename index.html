@@ -128,23 +128,38 @@ nav{
   transition:background 0.4s;
 }
 .fabric-card:hover .fabric-overlay{background:linear-gradient(to top,rgba(14,8,24,0.98) 0%,rgba(14,8,24,0.45) 55%,transparent 100%);}
-.fabric-info{position:absolute;bottom:0;left:0;right:0;padding:28px 24px;transform:translateY(8px);transition:transform 0.4s;}
-.fabric-card:hover .fabric-info{transform:translateY(0);}
-.fabric-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--white);display:block;margin-bottom:3px;}
-.fabric-tag{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block;}
-.fabric-desc{font-size:12px;color:rgba(196,159,224,0.75);line-height:1.6;opacity:0.45;transition:opacity 0.4s;}
+.fabric-info{
+  position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none;
+}
+.fabric-info > *{pointer-events:auto;}
+.fabric-header{
+  display:flex;flex-direction:column;gap:12px;z-index:3;flex-shrink:0;
+}
+.fabric-footer{
+  display:flex;flex-direction:column;gap:0;z-index:3;transform:translateY(40px);transition:transform 0.4s;margin-top:auto;justify-content:flex-end;padding-bottom:20px;flex-shrink:0;
+}
+.fabric-card:hover .fabric-footer{transform:translateY(0);}
+.fabric-name{
+  font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--white);display:block;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,0.5);flex-shrink:0;
+}
+.fabric-tag{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:block;text-shadow:0 1px 4px rgba(0,0,0,0.5);line-height:1.2;flex-shrink:0;
+}
+.fabric-desc{
+  font-size:12px;color:rgba(196,159,224,0.85);line-height:1.5;opacity:0.45;transition:opacity 0.4s;margin:0;margin-bottom:12px;flex-shrink:0;
+}
 .fabric-card:hover .fabric-desc{opacity:1;}
 .fabric-cta{
-  display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+  display:inline-flex;align-items:center;gap:8px;margin-top:10px;
   font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);
-  opacity:0.5;transform:translateY(4px);transition:opacity 0.4s 0.08s,transform 0.4s 0.08s;
+  opacity:0.5;transform:translateY(4px);transition:opacity 0.4s 0.08s,transform 0.4s 0.08s;width:fit-content;
 }
 .fabric-card:hover .fabric-cta{opacity:1;transform:translateY(0);}
 .fabric-pages-badge{
   position:absolute;top:14px;right:14px;
   background:rgba(14,8,24,0.8);backdrop-filter:blur(8px);
   border:1px solid rgba(200,160,58,0.3);
-  padding:4px 10px;font-size:9px;letter-spacing:2px;color:var(--gold);
+  padding:4px 10px;font-size:9px;letter-spacing:2px;color:var(--gold);z-index:10;
 }
 
 /* ── CONTACT ── */
@@ -445,7 +460,7 @@ footer ul li a:hover{color:var(--cream);}
   <div class="fabrics-grid reveal">
 
     <div class="fabric-card" onclick="openFabric('CARMEL')">
-      <img src="images/CARMEL/page-01.jpg" alt="CARMEL" loading="lazy">
+      <img src="images/TEXTURIZADOS/CARMEL/page-01.jpg" alt="CARMEL" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">26 cores</span>
       <div class="fabric-info">
@@ -457,7 +472,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('DIAMOND')">
-      <img src="images/DIAMOND/page-01.jpg" alt="Diamond" loading="lazy">
+      <img src="images/TEXTURIZADOS/DIAMOND/page-01.jpg" alt="Diamond" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Diamond</span>
@@ -468,7 +483,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('LIS')">
-      <img src="images/LIS/page-01.jpg" alt="LIS" loading="lazy">
+      <img src="images/TEXTURIZADOS/LIS/page-01.jpg" alt="LIS" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">LIS</span>
@@ -479,7 +494,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_POLIESTER')">
-      <img src="images/CANELADO_POLIESTER/page-01.jpg" alt="Canelado Poliéster" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_POLIESTER/page-01.jpg" alt="Canelado Poliéster" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">18 cores</span>
       <div class="fabric-info">
@@ -491,7 +506,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_LENATEX')">
-      <img src="images/CANELADO_LENATEX/page-01.jpg" alt="Canelado Lenatex" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_LENATEX/page-01.jpg" alt="Canelado Lenatex" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Canelado Lenatex</span>
@@ -502,7 +517,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_DE_COMPRESSAO')">
-      <img src="images/CANELADO_DE_COMPRESSAO/page-01.jpg" alt="Canelado de Compressão" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_DE_COMPRESSAO/page-01.jpg" alt="Canelado de Compressão" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">50+ cores</span>
       <div class="fabric-info">
@@ -514,7 +529,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_EDEN')">
-      <img src="images/CANELADO_EDEN/page-01.jpg" alt="Canelado Eden" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_EDEN/page-01.jpg" alt="Canelado Eden" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">36 cores</span>
       <div class="fabric-info">
@@ -526,7 +541,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_FUJI')">
-      <img src="images/CANELADO_FUJI/page-01.jpg" alt="Canelado Fuji" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_FUJI/page-01.jpg" alt="Canelado Fuji" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">40+ cores</span>
       <div class="fabric-info">
@@ -538,7 +553,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CANELADO_TREND_MOVE')">
-      <img src="images/CANELADO_TREND_MOVE/page-01.jpg" alt="Canelado Trend Move" loading="lazy">
+      <img src="images/TEXTURIZADOS/CANELADO_TREND_MOVE/page-01.jpg" alt="Canelado Trend Move" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Canelado Trend Move</span>
@@ -549,7 +564,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('BOUCLE')">
-      <img src="images/BOUCLE/page-01.jpg" alt="Bouclê" loading="lazy">
+      <img src="images/TEXTURIZADOS/BOUCLE/page-01.jpg" alt="Bouclê" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Bouclê</span>
@@ -560,7 +575,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('BOUCLE_PETALAS')">
-      <img src="images/BOUCLE_PETALAS/page-01.jpg" alt="Bouclê Pétalas" loading="lazy">
+      <img src="images/TEXTURIZADOS/BOUCLE_PETALAS/page-01.jpg" alt="Bouclê Pétalas" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Bouclê Pétalas</span>
@@ -571,7 +586,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('ANARRUGA_BRILHANTE')">
-      <img src="images/ANARRUGA_BRILHANTE/page-01.jpg" alt="Anarruga Brilhante" loading="lazy">
+      <img src="images/TEXTURIZADOS/ANARRUGA_BRILHANTE/page-01.jpg" alt="Anarruga Brilhante" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">11 cores</span>
       <div class="fabric-info">
@@ -583,7 +598,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('ANARRUGA_PRAIA')">
-      <img src="images/ANARRUGA_PRAIA/page-01.jpg" alt="Anarruga Praia" loading="lazy">
+      <img src="images/TEXTURIZADOS/ANARRUGA_PRAIA/page-01.jpg" alt="Anarruga Praia" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">25 cores</span>
       <div class="fabric-info">
@@ -595,7 +610,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CREPINHO')">
-      <img src="images/CREPINHO/page-01.jpg" alt="Crepinho" loading="lazy">
+      <img src="images/TEXTURIZADOS/CREPINHO/page-01.jpg" alt="Crepinho" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">22 cores</span>
       <div class="fabric-info">
@@ -607,7 +622,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CREPONADO')">
-      <img src="images/CREPONADO/page-01.jpg" alt="Creponado" loading="lazy">
+      <img src="images/TEXTURIZADOS/CREPONADO/page-01.jpg" alt="Creponado" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">9 cores</span>
       <div class="fabric-info">
@@ -619,7 +634,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('AREZZO')">
-      <img src="images/AREZZO/page-01.jpg" alt="Arezzo" loading="lazy">
+      <img src="images/TEXTURIZADOS/AREZZO/page-01.jpg" alt="Arezzo" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">5 cores</span>
       <div class="fabric-info">
@@ -631,7 +646,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CROCHETE')">
-      <img src="images/CROCHETE/page-01.jpg" alt="Crochete" loading="lazy">
+      <img src="images/TEXTURIZADOS/CROCHETE/page-01.jpg" alt="Crochete" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Crochete</span>
@@ -642,7 +657,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('CROCHE_SANTORINI')">
-      <img src="images/CROCHE_SANTORINI/page-01.jpg" alt="Crochê Santorini" loading="lazy">
+      <img src="images/TEXTURIZADOS/CROCHE_SANTORINI/page-01.jpg" alt="Crochê Santorini" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">8 cores</span>
       <div class="fabric-info">
@@ -654,7 +669,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_DEGRADE')">
-      <img src="images/JACQUARD_DEGRADE/page-01.jpg" alt="Jacquard Degradê" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_DEGRADE/page-01.jpg" alt="Jacquard Degradê" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">12 variações</span>
       <div class="fabric-info">
@@ -666,7 +681,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_BROCADO')">
-      <img src="images/JACQUARD_BROCADO/page-01.jpg" alt="Jacquard Brocado" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_BROCADO/page-01.jpg" alt="Jacquard Brocado" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">17 variações</span>
       <div class="fabric-info">
@@ -678,7 +693,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_CONCHAS')">
-      <img src="images/JACQUARD_CONCHAS/page-01.jpg" alt="Jacquard Conchas" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_CONCHAS/page-01.jpg" alt="Jacquard Conchas" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Conchas</span>
@@ -689,7 +704,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_CONCHINHAS')">
-      <img src="images/JACQUARD_CONCHINHAS/page-01.jpg" alt="Jacquard Conchinhas" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_CONCHINHAS/page-01.jpg" alt="Jacquard Conchinhas" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">7 variações</span>
       <div class="fabric-info">
@@ -701,7 +716,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_GITA')">
-      <img src="images/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Gita</span>
@@ -712,7 +727,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_KASHIMIR')">
-      <img src="images/JACQUARD_KASHIMIR/page-01.jpg" alt="Jacquard Kashimir" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_KASHIMIR/page-01.jpg" alt="Jacquard Kashimir" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Kashimir</span>
@@ -723,7 +738,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_LEAF')">
-      <img src="images/JACQUARD_LEAF/page-01.jpg" alt="Jacquard Leaf" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_LEAF/page-01.jpg" alt="Jacquard Leaf" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Leaf</span>
@@ -734,7 +749,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
 <div class="fabric-card" onclick="openFabric('JACQUARD_LINES')">
-      <img src="images/JACQUARD_LINES/page-01.jpg" alt="Jacquard Lines" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_LINES/page-01.jpg" alt="Jacquard Lines" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Lines</span>
@@ -745,7 +760,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('JACQUARD_NILO')">
-      <img src="images/JACQUARD_NILO/page-01.jpg" alt="Jacquard Nilo" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_NILO/page-01.jpg" alt="Jacquard Nilo" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Nilo</span>
@@ -756,7 +771,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
   <div class="fabric-card" onclick="openFabric('JACQUARD_WINNER')">
-      <img src="images/JACQUARD_WINNER/page-01.jpg" alt="Jacquard Winner" loading="lazy">
+      <img src="images/TEXTURIZADOS/JACQUARD_WINNER/page-01.jpg" alt="Jacquard Winner" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Winner</span>
@@ -767,7 +782,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
 <div class="fabric-card" onclick="openFabric('MALTE')">
-      <img src="images/MALTE/page-01.jpg" alt="Malte" loading="lazy">
+      <img src="images/TEXTURIZADOS/MALTE/page-01.jpg" alt="Malte" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Malte</span>
@@ -778,7 +793,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
     <div class="fabric-card" onclick="openFabric('MARSELHA')">
-      <img src="images/MARSELHA/page-01.jpg" alt="Marselha" loading="lazy">
+      <img src="images/TEXTURIZADOS/MARSELHA/page-01.jpg" alt="Marselha" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Marselha</span>
@@ -789,7 +804,7 @@ footer ul li a:hover{color:var(--cream);}
     </div>
 
 <div class="fabric-card" onclick="openFabric('ROCKS')">
-      <img src="images/ROCKS/page-01.jpg" alt="Rocks" loading="lazy">
+      <img src="images/TEXTURIZADOS/ROCKS/page-01.jpg" alt="Rocks" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Rocks</span>
@@ -822,26 +837,34 @@ footer ul li a:hover{color:var(--cream);}
   <div class="fabrics-grid reveal">
 
      <div class="fabric-card" onclick="openFabric('SARDINHA')">
-      <img src="images/SARDINHA/page-01.jpg" alt="Sardinha" loading="lazy">
+      <img src="images/ESTAMPADOS/SARDINHA/page-01.jpg" alt="Sardinha" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
-        <span class="fabric-name">Sardinha</span>
-        <span class="fabric-tag">Moda Praia · Moda</span>
-        <p class="fabric-desc">Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.</p>
-        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+        <div class="fabric-header">
+          <span class="fabric-name">Sardinha</span>
+          <span class="fabric-tag">Moda Praia · Moda</span>
+        </div>
+        <div class="fabric-footer">
+          <p class="fabric-desc">Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.</p>
+          <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+        </div>
       </div>
     </div>
 
      <div class="fabric-card" onclick="openFabric('SARDINHAS')">
-      <img src="images/SARDINHAS/page-01.jpg" alt="Sardinhas" loading="lazy">
+      <img src="images/ESTAMPADOS/SARDINHAS/page-01.jpg" alt="Sardinhas" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">12 variações</span>
       <div class="fabric-info">
-        <span class="fabric-name">Sardinhas</span>
-        <span class="fabric-tag">Moda Praia · Moda</span>
-        <p class="fabric-desc">Lançamento Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadasW.</p>
-        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+        <div class="fabric-header">
+          <span class="fabric-name">Sardinhas</span>
+          <span class="fabric-tag">Moda Praia · Moda</span>
+        </div>
+        <div class="fabric-footer">
+          <p class="fabric-desc">Lançamentos Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadas.</p>
+          <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+        </div>
       </div>
     </div>
     <!-- tecidos estampados serão adicionados aqui -->
@@ -975,39 +998,39 @@ footer ul li a:hover{color:var(--cream);}
 <script>
 // ── FABRIC DATA ──
 const FABRICS = {
-  CARMEL:              { name:'CARMEL',              tag:'Moda Praia · Fitness · Lingerie', desc:'Coleção exclusiva com 26 cores. Qualidade premium com toque suave e excelente caimento para moda praia, fitness e lingerie.', pages:27, colorsTitle:'Paleta Completa' },
-  DIAMOND:             { name:'Diamond',             tag:'Fitness · Lingerie',              desc:'Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.', pages:2,  colorsTitle:'Cores Disponíveis' },
-  LIS:                 { name:'LIS',                 tag:'Moda Praia · Fitness · Lingerie', desc:'Tecido texturizado de alta performance com toque macio e excelente recuperação elástica.', pages:7,  colorsTitle:'Cores Disponíveis' },
-  CANELADO_POLIESTER:  { name:'Canelado Poliéster',  tag:'Fitness · Lingerie',              desc:'Canelado com textura marcante e toque suave. Ótima elasticidade e durabilidade para peças fitness de alto desempenho.', pages:19, colorsTitle:'Cores Disponíveis' },
-  CANELADO_LENATEX:    { name:'Canelado Lenatex',    tag:'Lingerie · Moda',                 desc:'Acabamento delicado com textura canelada fina. Leveza e conforto incomparáveis para lingerie premium.', pages:4,  colorsTitle:'Cores Disponíveis' },
-  CANELADO_DE_COMPRESSAO:{ name:'Canelado Compressão', tag:'Fitness',                       desc:'Alta compressão com textura canelada diferenciada. Modelagem corporal e suporte para treinos intensos.', pages:50, colorsTitle:'Cores Disponíveis' },
-  CANELADO_EDEN:       { name:'Canelado Eden',       tag:'Moda Praia · Fitness',            desc:'Canelado com textura natural e toque premium. Ideal para coleções que unem conforto e estética.', pages:37, colorsTitle:'Cores Disponíveis' },
-  CANELADO_FUJI:       { name:'Canelado Fuji',       tag:'Moda · Fitness',                  desc:'Textura canelada com brilho sutil e caimento impecável. Versátil para moda casual e fitness.', pages:40, colorsTitle:'Cores Disponíveis' },
-  CANELADO_TREND_MOVE: { name:'Canelado Trend Move', tag:'Fitness · Lingerie',              desc:'Alta elasticidade e conforto para o movimento. Tecnologia avançada para peças fitness.', pages:7,  colorsTitle:'Cores Disponíveis' },
-  BOUCLE:              { name:'Bouclê',              tag:'Moda · Moda Praia',               desc:'Textura bouclê clássica com laçinhos característicos. Tecido nobre para peças com personalidade e sofisticação.', pages:7,  colorsTitle:'Cores Disponíveis' },
-  BOUCLE_PETALAS:      { name:'Bouclê Pétalas',      tag:'Moda · Moda Praia',               desc:'Variação exclusiva do bouclê com relevo em formato de pétalas. Exclusividade e charme para sua coleção.', pages:3,  colorsTitle:'Cores Disponíveis' },
-  ANARRUGA_BRILHANTE:  { name:'Anarruga Brilhante',  tag:'Moda Praia · Lingerie',           desc:'Textura anarrugada com acabamento brilhante e sofisticado. Excelente para saídas de praia e peças de destaque.', pages:12, colorsTitle:'Cores Disponíveis' },
-  ANARRUGA_PRAIA:      { name:'Anarruga Praia',      tag:'Moda Praia',                      desc:'Leveza e frescor com textura anarrugada especial para coleções praia. Toque agradável e secagem rápida.', pages:26, colorsTitle:'Cores Disponíveis' },
-  CREPINHO:            { name:'Crepinho',            tag:'Moda · Moda Praia',               desc:'Leveza e fluidez incomparáveis para peças com acabamento delicado e elegante.', pages:23, colorsTitle:'Cores Disponíveis' },
-  CREPONADO:           { name:'Creponado',           tag:'Moda Praia',                      desc:'Superfície texturizada e leve para saídas de praia com estilo e personalidade.', pages:10, colorsTitle:'Cores Disponíveis' },
-  AREZZO:              { name:'Arezzo',              tag:'Moda Praia · Moda',               desc:'Tecido com textura refinada e caimento impecável. Versatilidade para diversas aplicações na moda.', pages:6,  colorsTitle:'Cores Disponíveis' },
-  CROCHETE:            { name:'Crochete',            tag:'Moda Praia · Moda',               desc:'Textura artesanal com vazados característicos do crochê. Charme e originalidade para peças que chamam atenção.', pages:5,  colorsTitle:'Cores Disponíveis' },
-  CROCHE_SANTORINI:    { name:'Crochê Santorini',    tag:'Moda Praia · Moda',               desc:'Inspiração mediterrânea com textura crochê única. Sofisticação e leveza para coleções verão.', pages:9,  colorsTitle:'Cores Disponíveis' },
-  JACQUARD_DEGRADE:    { name:'Jacquard Degradê',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com efeito degradê exclusivo. Tecido nobre para coleções diferenciadas.', pages:13, colorsTitle:'Variações' },
-  JACQUARD_BROCADO:    { name:'Jacquard Brocado',    tag:'Moda Praia · Moda',               desc:'Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.', pages:18, colorsTitle:'Variações' },
-  JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
-  JACQUARD_CONCHINHAS: { name:'Jacquard Conchinhas', tag:'Moda Praia · Moda',               desc:'Variação delicada do jacquard conchas com padrão menor e detalhes refinados.', pages:8,  colorsTitle:'Variações' },
-  JACQUARD_GITA:       { name:'Jacquard Gita',       tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:3, colorsTitle:'Variações' },
-  JACQUARD_KASHIMIR:   { name:'Jacquard Kashimir',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos orientais. Sofisticação e elegância para coleções diferenciadas.', pages:2,  colorsTitle:'Variações' },
-  JACQUARD_LEAF:       { name:'Jacquard Leaf',       tag:'Moda Praia · Moda',               desc:'Padrão jacquard com motivo folhagem exclusivo. Sofisticação e elegância natural para coleções diferenciadas.', pages:4,  colorsTitle:'Variações' },
-  JACQUARD_LINES:      { name:'Jacquard Lines',      tag:'Moda Praia · Moda',               desc:'Trama jacquard com linhas entrelaçadas formando um padrão exclusivo. Elegância e modernidade para suas coleções.', pages:2,  colorsTitle:'Variações' },
-  JACQUARD_NILO:       { name:'Jacquard Nilo',       tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Frescor e sofisticação para coleções verão.', pages:2,  colorsTitle:'Variações' },
-  JACQUARD_WINNER:     { name:'Jacquard Winner',     tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:6,  colorsTitle:'Variações' },
-  MALTE:               { name:'Malte',               tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
-  MARSELHA:            { name:'Marselha',            tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
-  ROCKS:               { name:'Rocks',               tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
-  SARDINHA:            { name:'Sardinha',            tag:'Moda Praia · Moda',               desc:'Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
-  SARDINHAS:           { name:'Sardinhas',           tag:'Moda Praia · Moda',               desc:'Lançamentos Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
+  CARMEL:              { name:'CARMEL',              category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Lingerie', desc:'Coleção exclusiva com 26 cores. Qualidade premium com toque suave e excelente caimento para moda praia, fitness e lingerie.', pages:27, colorsTitle:'Paleta Completa' },
+  DIAMOND:             { name:'Diamond',             category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.', pages:2,  colorsTitle:'Cores Disponíveis' },
+  LIS:                 { name:'LIS',                 category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Lingerie', desc:'Tecido texturizado de alta performance com toque macio e excelente recuperação elástica.', pages:7,  colorsTitle:'Cores Disponíveis' },
+  CANELADO_POLIESTER:  { name:'Canelado Poliéster',  category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Canelado com textura marcante e toque suave. Ótima elasticidade e durabilidade para peças fitness de alto desempenho.', pages:19, colorsTitle:'Cores Disponíveis' },
+  CANELADO_LENATEX:    { name:'Canelado Lenatex',    category:'TEXTURIZADOS',    tag:'Lingerie · Moda',                 desc:'Acabamento delicado com textura canelada fina. Leveza e conforto incomparáveis para lingerie premium.', pages:4,  colorsTitle:'Cores Disponíveis' },
+  CANELADO_DE_COMPRESSAO:{ name:'Canelado Compressão', category:'TEXTURIZADOS',  tag:'Fitness',                         desc:'Alta compressão com textura canelada diferenciada. Modelagem corporal e suporte para treinos intensos.', pages:50, colorsTitle:'Cores Disponíveis' },
+  CANELADO_EDEN:       { name:'Canelado Eden',       category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness',            desc:'Canelado com textura natural e toque premium. Ideal para coleções que unem conforto e estética.', pages:37, colorsTitle:'Cores Disponíveis' },
+  CANELADO_FUJI:       { name:'Canelado Fuji',       category:'TEXTURIZADOS',    tag:'Moda · Fitness',                  desc:'Textura canelada com brilho sutil e caimento impecável. Versátil para moda casual e fitness.', pages:40, colorsTitle:'Cores Disponíveis' },
+  CANELADO_TREND_MOVE: { name:'Canelado Trend Move', category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Alta elasticidade e conforto para o movimento. Tecnologia avançada para peças fitness.', pages:7,  colorsTitle:'Cores Disponíveis' },
+  BOUCLE:              { name:'Bouclê',              category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Textura bouclê clássica com laçinhos característicos. Tecido nobre para peças com personalidade e sofisticação.', pages:7,  colorsTitle:'Cores Disponíveis' },
+  BOUCLE_PETALAS:      { name:'Bouclê Pétalas',      category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Variação exclusiva do bouclê com relevo em formato de pétalas. Exclusividade e charme para sua coleção.', pages:3,  colorsTitle:'Cores Disponíveis' },
+  ANARRUGA_BRILHANTE:  { name:'Anarruga Brilhante',  category:'TEXTURIZADOS',    tag:'Moda Praia · Lingerie',           desc:'Textura anarrugada com acabamento brilhante e sofisticado. Excelente para saídas de praia e peças de destaque.', pages:12, colorsTitle:'Cores Disponíveis' },
+  ANARRUGA_PRAIA:      { name:'Anarruga Praia',      category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Leveza e frescor com textura anarrugada especial para coleções praia. Toque agradável e secagem rápida.', pages:26, colorsTitle:'Cores Disponíveis' },
+  CREPINHO:            { name:'Crepinho',            category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Leveza e fluidez incomparáveis para peças com acabamento delicado e elegante.', pages:23, colorsTitle:'Cores Disponíveis' },
+  CREPONADO:           { name:'Creponado',           category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Superfície texturizada e leve para saídas de praia com estilo e personalidade.', pages:10, colorsTitle:'Cores Disponíveis' },
+  AREZZO:              { name:'Arezzo',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Tecido com textura refinada e caimento impecável. Versatilidade para diversas aplicações na moda.', pages:6,  colorsTitle:'Cores Disponíveis' },
+  CROCHETE:            { name:'Crochete',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura artesanal com vazados característicos do crochê. Charme e originalidade para peças que chamam atenção.', pages:5,  colorsTitle:'Cores Disponíveis' },
+  CROCHE_SANTORINI:    { name:'Crochê Santorini',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Inspiração mediterrânea com textura crochê única. Sofisticação e leveza para coleções verão.', pages:9,  colorsTitle:'Cores Disponíveis' },
+  JACQUARD_DEGRADE:    { name:'Jacquard Degradê',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com efeito degradê exclusivo. Tecido nobre para coleções diferenciadas.', pages:13, colorsTitle:'Variações' },
+  JACQUARD_BROCADO:    { name:'Jacquard Brocado',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.', pages:18, colorsTitle:'Variações' },
+  JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
+  JACQUARD_CONCHINHAS: { name:'Jacquard Conchinhas', category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Variação delicada do jacquard conchas com padrão menor e detalhes refinados.', pages:8,  colorsTitle:'Variações' },
+  JACQUARD_GITA:       { name:'Jacquard Gita',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:3, colorsTitle:'Variações' },
+  JACQUARD_KASHIMIR:   { name:'Jacquard Kashimir',   category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos orientais. Sofisticação e elegância para coleções diferenciadas.', pages:2,  colorsTitle:'Variações' },
+  JACQUARD_LEAF:       { name:'Jacquard Leaf',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Padrão jacquard com motivo folhagem exclusivo. Sofisticação e elegância natural para coleções diferenciadas.', pages:4,  colorsTitle:'Variações' },
+  JACQUARD_LINES:      { name:'Jacquard Lines',      category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com linhas entrelaçadas formando um padrão exclusivo. Elegância e modernidade para suas coleções.', pages:2,  colorsTitle:'Variações' },
+  JACQUARD_NILO:       { name:'Jacquard Nilo',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Frescor e sofisticação para coleções verão.', pages:2,  colorsTitle:'Variações' },
+  JACQUARD_WINNER:     { name:'Jacquard Winner',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:6,  colorsTitle:'Variações' },
+  MALTE:               { name:'Malte',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
+  MARSELHA:            { name:'Marselha',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
+  ROCKS:               { name:'Rocks',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
+  SARDINHA:            { name:'Sardinha',            category:'ESTAMPADOS',      tag:'Moda Praia · Moda',               desc:'Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
+  SARDINHAS:           { name:'Sardinhas',           category:'ESTAMPADOS',      tag:'Moda Praia · Moda',               desc:'Lançamentos Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
 };
 
 // Page number helper — returns "page-01" or "page-12" style
@@ -1022,7 +1045,7 @@ function openFabric(key) {
   const f = FABRICS[key];
   if (!f) return;
 
-  document.getElementById('fabricModalCover').src = `images/${key}/${pageFile(1)}`;
+  document.getElementById('fabricModalCover').src = `images/${f.category}/${key}/${pageFile(1)}`;
   document.getElementById('fabricModalName').innerHTML = f.name;
   document.getElementById('fabricModalTag').textContent = f.tag;
   document.getElementById('fabricModalDesc').textContent = f.desc;
@@ -1043,7 +1066,7 @@ function openFabric(key) {
     colorsSection.style.display = 'block';
 
     for (let i = 2; i <= f.pages; i++) {
-      const src = `images/${key}/${pageFile(i)}`;
+      const src = `images/${f.category}/${key}/${pageFile(i)}`;
       currentLightboxImages.push(src);
       const idx = currentLightboxImages.length - 1;
       const div = document.createElement('div');
