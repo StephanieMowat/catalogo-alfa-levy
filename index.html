@@ -820,6 +820,30 @@ footer ul li a:hover{color:var(--cream);}
 
 <div class="fabrics-wrap">
   <div class="fabrics-grid reveal">
+
+     <div class="fabric-card" onclick="openFabric('SARDINHA')">
+      <img src="images/SARDINHA/page-01.jpg" alt="Sardinha" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <span class="fabric-pages-badge">3 variações</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Sardinha</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.</p>
+        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+     <div class="fabric-card" onclick="openFabric('SARDINHAS')">
+      <img src="images/SARDINHAS/page-01.jpg" alt="Sardinhas" loading="lazy">
+      <div class="fabric-overlay"></div>
+      <span class="fabric-pages-badge">12 variações</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Sardinhas</span>
+        <span class="fabric-tag">Moda Praia · Moda</span>
+        <p class="fabric-desc">Lançamento Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadasW.</p>
+        <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
     <!-- tecidos estampados serão adicionados aqui -->
   </div>
 </div>
@@ -982,6 +1006,8 @@ const FABRICS = {
   MALTE:               { name:'Malte',               tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   MARSELHA:            { name:'Marselha',            tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
   ROCKS:               { name:'Rocks',               tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
+  SARDINHA:            { name:'Sardinha',            tag:'Moda Praia · Moda',               desc:'Lançamento Sardinha em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
+  SARDINHAS:           { name:'Sardinhas',           tag:'Moda Praia · Moda',               desc:'Lançamentos Sardinhas em tule e suplex. Charme e sofisticação para coleções diferenciadas.', pages:3,  colorsTitle:'Variações' },
 };
 
 // Page number helper — returns "page-01" or "page-12" style
