@@ -332,8 +332,9 @@
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Crochete</span>
-        <span class="fabric-tag">Moda Praia · Moda</span>
-        <p class="fabric-desc">Textura artesanal com vazados característicos do crochê. Charme e originalidade para peças que chamam atenção.</p>
+        <span class="fabric-tag">Moda Praia · Fitness · Casual</span>
+        <p class="fabric-desc">Com estrutura dupla e alta gramatura, a malha CROCHETE possui textura inspirada nos produtos artesanais, com aparência rústica e efeito de crochê produzido à mão.
+Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Ideal para peças da moda praia, pode ser utilizado no segmento Fitness e em peças de moda casual.</p>
         <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
@@ -367,8 +368,10 @@
       <span class="fabric-pages-badge">17 variações</span>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Brocado</span>
-        <span class="fabric-tag">Moda Praia · Moda</span>
-        <p class="fabric-desc">Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.</p>
+        <span class="fabric-tag">Moda Praia · Fitness</span>
+        <p class="fabric-desc">A malha JACQUARD BROCADO possui textura trabalhada com retenção e bastante volume, enriquecendo e agregando valor às peças, mesmo quando em modelagens básicas.
+Em poliamida opaca com elastano, é comercialmente usada com o lado avesso para fora. Versátil, possui elasticidade e compressão ajustadas. É confortável e pode ser utilizada também na moda praia ou casual. Nas peças Fitness, garante segurança por ser zero transparência durante a realização dos movimentos.
+FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.</p>
         <span class="fabric-cta">Ver variações <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
@@ -483,6 +486,42 @@
         <span class="fabric-name">LIS</span>
         <span class="fabric-tag">Moda Praia · Fitness · Lingerie</span>
         <p class="fabric-desc">Tecido texturizado de alta performance com toque macio e excelente recuperação.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('LUREX_3_DOURADO')">
+      <img src="images/TEXTURIZADOS/LUREX_3_DOURADO/page-01.jpg" alt="Lurex 3 Dourado" loading="lazy">
+      <div class="fabric-overlay"></div>
+        <span class="fabric-pages-badge">6 variações</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Lurex 3 Dourado</span>
+        <span class="fabric-tag">Moda Praia · Fitness · Lingerie</span>
+        <p class="fabric-desc">Textura com fios de lurex dourados que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('LUREX_3_PRATA')">
+      <img src="images/TEXTURIZADOS/LUREX_3_PRATA/page-01.jpg" alt="Lurex 3 Prata" loading="lazy">
+      <div class="fabric-overlay"></div>
+        <span class="fabric-pages-badge">25+ cores</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Lurex 3 Prata</span>
+        <span class="fabric-tag">Moda Praia · Fitness · Lingerie</span>
+        <p class="fabric-desc">Textura com fios de lurex prata que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" onclick="openFabric('LUREX_4_E_OUTROS')">
+      <img src="images/TEXTURIZADOS/LUREX_4_E_OUTROS/page-01.jpg" alt="Lurex 4 e Outros" loading="lazy">
+      <div class="fabric-overlay"></div>
+        <span class="fabric-pages-badge">20+ cores</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Lurex 4 e Outros</span>
+        <span class="fabric-tag">Moda Praia · Fitness · Lingerie</span>
+        <p class="fabric-desc">Textura com fios de lurex que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.</p>
         <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
@@ -798,7 +837,7 @@
   </div>
 
   <div class="footer-bottom">
-    <span>© 2025 Alfa & Levy Têxtil. Todos os direitos reservados.</span>
+    <span>© 2026 Alfa & Levy Têxtil. Todos os direitos reservados.</span>
     <span>CATÁLOGO DIGITAL · ALFA & LEVY</span>
   </div>
 </footer>
@@ -820,6 +859,20 @@
           <h2 id="fabricModalName" class="fabric-modal-name"></h2>
         </div>
         <p id="fabricModalDesc" class="fabric-modal-desc"></p>
+
+        <div class="specs-container">
+          <div class="spec-line"><strong>Rendimento:</strong> <span id="specRendimento"></span></div>
+          <div class="spec-line"><strong>Gramatura:</strong> <span id="specGramatura"></span></div>
+          <div class="spec-line"><strong>Composição:</strong> <span id="specComposicao"></span></div>
+        </div>
+
+        <div class="catalog-attributes" id="catalog-attributes">
+          <img src="images/icons/10.PROTECAO-UV.jpg">
+          <img src="images/icons/1.FITNESS.jpg">
+          <img src="images/icons/2.PRAIA_.jpg">
+        </div>
+ 
+
         <a id="fabricModalWpp" href="" target="_blank" class="fabric-modal-wpp">
           <svg><use href="#ico-whatsapp"/></svg> Solicitar via WhatsApp
         </a>
@@ -846,7 +899,7 @@
 <script>
 // ── FABRIC DATA ──
 const FABRICS = {
-  ANARRUGA_BRILHANTE:  { name:'Anarruga Brilhante',  category:'TEXTURIZADOS',    tag:'Moda Praia · Lingerie',           desc:'Textura anarrugada com acabamento brilhante e sofisticado. Excelente para saídas de praia e peças de destaque.', pages:12, colorsTitle:'Cores Disponíveis' },
+  ANARRUGA_BRILHANTE:  { name:'Anarruga Brilhante',  category:'TEXTURIZADOS',    tag:'Moda Praia · Lingerie',           desc:'Textura anarrugada com acabamento brilhante e sofisticado. Excelente para saídas de praia e peças de destaque.', pages:12, colorsTitle:'Cores Disponíveis', rendimento:'1,5m por metro', gramatura:'220g/m²', composicao:'80% Poliamida, 20% Elastano', attributes:['05.FITNESS.jpg','10.LINGERIE.jpg','08.BRILHANTE.jpg','01.COMPRESSAO.jpg','12.COMFORTO_TERMICO.jpg'] },
   ANARRUGA_PRAIA:      { name:'Anarruga Praia',      category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Leveza e frescor com textura anarrugada especial para coleções praia. Toque agradável e secagem rápida.', pages:26, colorsTitle:'Cores Disponíveis' },
   AREZZO:              { name:'Arezzo',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Tecido com textura refinada e caimento impecável. Versatilidade para diversas aplicações na moda.', pages:6,  colorsTitle:'Cores Disponíveis' },
   BOUCLE:              { name:'Bouclê',              category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Textura bouclê clássica com laçinhos característicos. Tecido nobre para peças com personalidade e sofisticação.', pages:7,  colorsTitle:'Cores Disponíveis' },
@@ -860,15 +913,15 @@ const FABRICS = {
   CANELADO_POLIESTER:  { name:'Canelado Poliéster',  category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Canelado com textura marcante e toque suave. Ótima elasticidade e durabilidade para peças fitness de alto desempenho.', pages:19, colorsTitle:'Cores Disponíveis' },
   CANELADO_POWER:      { name:'Canelado Power',      category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Textura canelada com toque firme e compressão moderada. Ideal para peças que exigem suporte e conforto durante o movimento.', pages:12, colorsTitle:'Cores Disponíveis' },
   CANELADO_TREND_MOVE: { name:'Canelado Trend Move', category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Alta elasticidade e conforto para o movimento. Tecnologia avançada para peças fitness.', pages:6,  colorsTitle:'Cores Disponíveis' },
-  CANELADO_WONDER:     { name:'Canelado Wonder',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Estilo e performace, onde o artigo apresenta ótima elasticidade assertivo para valorizar a silhueta com conforto. Desenvolvido com a tecnologia Lycra® Xtra-life que garante maior durabilidade das peças e maior resistência a danos causados pelo cloro, suor, protetores solares, cremes e óleos corporais.', pages:17, colorsTitle:'Cores Disponíveis' },
+  CANELADO_WONDER:     { name:'Canelado Wonder',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Estilo e performace, onde o artigo apresenta ótima elasticidade assertivo para valorizar a silhueta com conforto. Desenvolvido com a tecnologia Lycra® Xtra-life que garante maior durabilidade das peças e maior resistência a danos causados pelo cloro, suor, protetores solares, cremes e óleos corporais.', pages:17, colorsTitle:'Cores Disponíveis', rendimento:'2,75m/kg', gramatura:'280g/m²', composicao:'76,8% Poliamida, 23,2% Elastano', attributes:['05.FITNESS.jpg','10.LINGERIE.jpg','08.BRILHANTE.jpg','01.COMPRESSAO.jpg','12.CONFORTO-TERMICO.jpg'] },
   CARMEL:              { name:'Carmel',              category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Lingerie', desc:'Coleção exclusiva com 26 cores. Qualidade premium com toque suave e excelente caimento para moda praia, fitness e lingerie.', pages:27, colorsTitle:'Cores Disponíveis' },
   CREPINHO:            { name:'Crepinho',            category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Leveza e fluidez incomparáveis para peças com acabamento delicado e elegante.', pages:23, colorsTitle:'Cores Disponíveis' },
   CREPONADO:           { name:'Creponado',           category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Superfície texturizada e leve para saídas de praia com estilo e personalidade.', pages:10, colorsTitle:'Cores Disponíveis' },
   CROCHE_SANTORINI:    { name:'Crochê Santorini',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Inspiração mediterrânea com textura crochê única. Sofisticação e leveza para coleções verão.', pages:9,  colorsTitle:'Cores Disponíveis' },
-  CROCHETE:            { name:'Crochete',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura artesanal com vazados característicos do crochê. Charme e originalidade para peças que chamam atenção.', pages:5,  colorsTitle:'Variações' },
+  CROCHETE:            { name:'Crochete',            category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Casual',            desc:'Com estrutura dupla e alta gramatura, a malha CROCHETE possui textura inspirada nos produtos artesanais, com aparência rústica e efeito de crochê produzido à mão. Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Ideal para peças da moda praia, pode ser utilizado no segmento Fitness e em peças de moda casual.', pages:5,  colorsTitle:'Variações', rendimento:'1,68m/KG', gramatura:'450g | 1,32m', composicao:'80% Poliamida, 20% Elastano', attributes:['05.FITNESS.jpg','09.PRAIA.jpg','03.MODA.jpg','02.COBERTURA.jpg','04.MACIEZ.jpg','06.SOLAR.jpg'] },
   CRUNCH_LISTRADO:     { name:'Crunch Listrado',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura crunch com listras em relevo. Estilo e personalidade para suas coleções.', pages:8,  colorsTitle:'Cores Disponíveis' },
   DIAMOND:             { name:'Diamond',             category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.', pages:2,  colorsTitle:'Variações' },
-  JACQUARD_BROCADO:    { name:'Jacquard Brocado',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama brocado com relevo tridimensional. Elegância e sofisticação para peças exclusivas.', pages:18, colorsTitle:'Cores Disponíveis' },
+  JACQUARD_BROCADO:    { name:'Jacquard Brocado',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'A malha JACQUARD BROCADO possui textura trabalhada com retenção e bastante volume, enriquecendo e agregando valor às peças, mesmo quando em modelagens básicas. Em poliamida opaca com elastano, é comercialmente usada com o lado avesso para fora. Versátil, possui elasticidade e compressão ajustadas. É confortável e pode ser utilizada também na moda praia ou casual. Nas peças Fitness, garante segurança por ser zero transparência durante a realização dos movimentos. FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.', pages:18, colorsTitle:'Cores Disponíveis', rendimento:'2,64m/KG', gramatura:'330g | 1,5m', composicao:'80% Poliamida, 20% Elastano', attributes:['05.FITNESS.jpg','09.PRAIA.jpg','01.COMPRESSAO.jpg','06.SOLAR.jpg','03.MODA.jpg'] },
   JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
   JACQUARD_CONCHINHAS: { name:'Jacquard Conchinhas', category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Variação delicada do jacquard conchas com padrão menor e detalhes refinados.', pages:8,  colorsTitle:'Variações' },
   JACQUARD_DEGRADE:    { name:'Jacquard Degradê',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com efeito degradê exclusivo. Tecido nobre para coleções diferenciadas.', pages:13, colorsTitle:'Cores Dispoíveis' },
@@ -879,18 +932,21 @@ const FABRICS = {
   JACQUARD_NILO:       { name:'Jacquard Nilo',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos aquáticos. Frescor e sofisticação para coleções verão.', pages:2,  colorsTitle:'Variações' },
   JACQUARD_WINNER:     { name:'Jacquard Winner',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Trama jacquard com padrão exclusivo inspirado em motivos esportivos. Ideal para coleções fitness com estilo.', pages:6,  colorsTitle:'Variações' },
   LIS:                 { name:'LIS',                 category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Lingerie', desc:'Tecido texturizado de alta performance com toque macio e excelente recuperação elástica.', pages:7,  colorsTitle:'Cores Disponíveis' },
+  LUREX_3_DOURADO:     { name:'Lurex 3 Dourado',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura com fios de lurex dourados que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.', pages:6,  colorsTitle:'Variações' },
+  LUREX_3_PRATA:       { name:'Lurex 3 Prata',       category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura com fios de lurex prateados que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.', pages:29,  colorsTitle:'Cores' },
+  LUREX_4_E_OUTROS:    { name:'Lurex 4 e Outros',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura com fios de lurex que conferem brilho e sofisticação. Ideal para peças de destaque e coleções especiais.', pages:23,  colorsTitle:'Cores' },
   LUX_DUBAI:           { name:'Lux Dubai',           category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura luxuosa com brilho sutil e caimento impecável. Ideal para peças sofisticadas e elegantes.', pages:2,  colorsTitle:'Variações' },
   LYCRA_JEANS:         { name:'Lycra Jeans',         category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura inspirada em jeans com toque macio e excelente elasticidade. Versatilidade para peças casuais e de moda praia.', pages:2,  colorsTitle:'Variações' },
-  MACRAME:             { name:'Macramê',             category:'TEXTURIZADOS',    tag:'Moda Praia . Moda',               desc:'Textura artesanal com nós e vazados característicos do macramê. Peças com personalidade e estilo único.', pages:3,  colorsTitle:'Variações' },
-  MALIBU:              { name:'Malibu',              category:'TEXTURIZADOS',    tag:'Fitness . Moda . Moda Praia',          desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:20,  colorsTitle:'Cores Disponíveis' },
+  MACRAME:             { name:'Macramê',             category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura artesanal com nós e vazados característicos do macramê. Peças com personalidade e estilo único.', pages:3,  colorsTitle:'Variações' },
+  MALIBU:              { name:'Malibu',              category:'TEXTURIZADOS',    tag:'Fitness · Moda · Moda Praia',     desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:20,  colorsTitle:'Cores Disponíveis' },
   MALTE:               { name:'Malte',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   MARRAKESH:           { name:'Marrakesh',           category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:3,  colorsTitle:'Variações' },
   MARSELHA:            { name:'Marselha',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:6,  colorsTitle:'Cores Disponíveis' },
   MONTANA:             { name:'Montana',             category:'TEXTURIZADOS',    tag:'Fitness · Moda',                  desc:'Visual compacto e sem transparência. Sua construção estruturada extrapower no comprimento garante suporte nas práticas esportivas, com flexibilidade quando exigido. Tecnologia Ketten Sport de tecidos altamentes resistentes, bi-elásticos e com ótima estabilidade dimensional. Ideal para fitness em geral e moda casual.', pages:12,  colorsTitle:'Cores Disponíveis' },
   POINTS:              { name:'Points',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   POSITANO:            { name:'Positano',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:4,  colorsTitle:'Variações' },
-  ROCKS:               { name:'Rocks',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:22,  colorsTitle:'Cores Disponíveis' },
-  SAINT_MARTIN:        { name:'Saint Martin',        category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Com visual tridimensional, o artigo confere tecnologia com conforto. Proporciona visual de tecido feito a mão, tem bom caimento e boa elasticidade para permitir a confecção de peças com modelagens drapeadas e torcidas. Foi desenvolvido para atender ao mercado de praa com forte impacto visual na confecção de biquínis e maiôs.', pages:21,  colorsTitle:'Cores Disponíveis' },
+  ROCKS:               { name:'Rocks',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Cores Disponíveis' },
+  SAINT_MARTIN:        { name:'Saint Martin',        category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Com visual tridimensional, o artigo confere tecnologia com conforto. Proporciona visual de tecido feito a mão, tem bom caimento e boa elasticidade para permitir a confecção de peças com modelagens drapeadas e torcidas. Foi desenvolvido para atender ao mercado de praa com forte impacto visual na confecção de biquínis e maiôs.', pages:22,  colorsTitle:'Cores Disponíveis' },
   SEREIA:              { name:'Sereia',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:5,  colorsTitle:'Variações' },
   SUKUZA:              { name:'Sukuza',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:2,  colorsTitle:'Cores Disponíveis' },
   TEXAS:               { name:'Texas',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:17,  colorsTitle:'Cores Disponíveis' },
@@ -915,9 +971,15 @@ function openFabric(key) {
   document.getElementById('fabricModalName').innerHTML = f.name;
   document.getElementById('fabricModalTag').textContent = f.tag;
   document.getElementById('fabricModalDesc').textContent = f.desc;
+  document.getElementById('specRendimento').innerText = f.rendimento || '-';
+  document.getElementById('specGramatura').innerText = f.gramatura || '-';
+  document.getElementById('specComposicao').innerText = f.composicao || '-';
+  document.getElementById('catalog-attributes').innerHTML = (f.attributes || []).map(attr => `<img src="images/icons/${attr}">`).join('');
   document.getElementById('fabricModalWpp').href =
     `https://wa.me/5511957717470?text=Olá!%20Tenho%20interesse%20no%20tecido%20${encodeURIComponent(f.name)}.`;
 
+
+    
   // Build colors grid (pages 2 onwards)
   const grid = document.getElementById('fabricModalGrid');
   grid.innerHTML = '';

@@ -122,12 +122,16 @@ nav{
 
 /* Vinheta leve e suave em todos os cards */
 .fabric-overlay {
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(14,8,24,0.7) 0%,rgba(14,8,24,0.1) 50%,transparent 100%) !important;
-  transition:background 0.4s;
+  position: absolute;
+  inset: 0;
+  /* MUDANÇA: Gradiente escuro no topo (para o texto) e na base (para o botão) */
+  background: linear-gradient(to bottom, rgba(14,8,24,0.6) 0%, transparent 35%, transparent 65%, rgba(14,8,24,0.8) 100%) !important;
+  transition: background 0.4s;
 }
+
 .fabric-card:hover .fabric-overlay {
-  background:linear-gradient(to top,rgba(14,8,24,0.85) 0%,rgba(14,8,24,0.25) 50%,transparent 100%) !important;
+  /* MUDANÇA: Intensifica levemente o escurecimento no hover */
+  background: linear-gradient(to bottom, rgba(14,8,24,0.75) 0%, rgba(14,8,24,0.15) 35%, rgba(14,8,24,0.15) 65%, rgba(6, 6, 7, 0.9) 100%) !important;
 }
 
 /* Container de informações unificado */
@@ -150,13 +154,33 @@ nav{
   transform:translateY(20px);transition:transform 0.4s;
   margin-top:auto;justify-content:flex-end;padding-bottom:20px;flex-shrink:1;
 }
-.fabric-card:hover .fabric-footer{transform:translateY(0);}
+.fabric-card:hover .fabric-footer{transform:translateY();}
 
 .fabric-name {
-  font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:300;color:var(--white);display:block;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,0.8);flex-shrink:0;margin-top: 20px;
+  font-family: 'Baskerville Old Face', serif;
+  font-size: 27px;
+  font-weight: 550;
+  color: var(--white);
+  display: block;
+  line-height: 1.2;
+  flex-shrink: 0;
+  margin-top: 20px;
+  /* MUDANÇA: Sombra mais envelopada para garantir leitura no claro */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 0 4px rgba(0,0,0,0.6); 
 }
+
 .fabric-tag {
-  font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:block;text-shadow:0 1px 4px rgba(0,0,0,0.8);line-height:1.2;flex-shrink:0;margin-top: 0;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  line-height: 1.2;
+  flex-shrink: 0;
+  margin-top: 0;
+  font-weight: 600;
+  /* MUDANÇA: Sombra dupla projetada para o dourado não sumir no branco */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 3px rgba(0,0,0,0.9);
 }
 
 /* DESCRIÇÃO E BOTÃO - UNIFICADOS */
@@ -166,7 +190,7 @@ nav{
   flex-shrink:1;overflow:hidden;
   display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;
 }
-.fabric-card:hover .fabric-desc{opacity:1;}
+.fabric-card:hover .fabric-desc{opacity:2;}
 
 .fabric-cta {
   display:inline-flex;align-items:center;gap:8px;margin-top:5px;
@@ -210,7 +234,7 @@ footer{background:rgba(7,3,14,0.95);border-top:1px solid rgba(139,69,200,0.15);p
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:4px;color:var(--gold-light);text-transform:uppercase;margin-bottom:16px;}
 .footer-logo span{color:var(--lavender);font-weight:300;}
-footer p{font-size:12px;line-height:1.8;color:rgba(196,159,224,0.5);max-width:260px;}
+footer p{font-size:13px;line-height:1.8;color:rgba(196,159,224,0.5);max-width:260px;}
 .footer-social{display:flex;gap:16px;margin-top:20px;}
 .footer-social a{color:rgba(196,159,224,0.4);transition:color 0.3s;text-decoration:none;}
 .footer-social a:hover{color:var(--gold-light);}
@@ -218,14 +242,14 @@ footer p{font-size:12px;line-height:1.8;color:rgba(196,159,224,0.5);max-width:26
 footer h4{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
 footer ul{list-style:none;}
 footer ul li{margin-bottom:10px;}
-footer ul li a{font-size:12px;color:rgba(196,159,224,0.5);text-decoration:none;transition:color 0.3s;letter-spacing:1px;}
+footer ul li a{font-size:13px;color:rgba(196,159,224,0.5);text-decoration:none;transition:color 0.3s;letter-spacing:1px;}
 footer ul li a:hover{color:var(--cream);}
 .footer-address-bar{border-top:1px solid rgba(139,69,200,0.15);padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .footer-addr-inner{display:flex;align-items:center;gap:14px;}
 .footer-addr-icon{width:38px;height:38px;border:1px solid rgba(200,160,58,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .footer-addr-icon svg{width:16px;height:16px;fill:var(--gold);}
 .footer-addr-link:hover{color:var(--gold-light);}
-.footer-addr-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px;}
+.footer-addr-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px;}
 .footer-map-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border:1px solid rgba(200,160,58,0.35);color:var(--gold);font-size:9px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;white-space:nowrap;}
 .footer-map-btn:hover{background:rgba(200,160,58,0.1);color:var(--gold-light);}
 .footer-map-btn svg{width:13px;height:13px;fill:currentColor;}
@@ -242,58 +266,113 @@ footer ul li a:hover{color:var(--cream);}
   overflow-y:auto;
 }
 .fabric-modal.open{display:flex;}
-.fabric-modal-inner{
-  position:relative;width:100%;max-width:1100px;
-  animation:modalIn 0.4s cubic-bezier(0.22,1,0.36,1) both;
+.fabric-modal-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  /* ⬇️ Aqui criamos o visual de folha de papel */
+  background: rgba(252, 245, 230, 0.938); /* Fundo off-white */
+  padding: 40px; /* Espaço interno da borda */
+  border-radius: 4px; /* Cantinhos levemente suaves */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Sombra para destacar do fundo escuro */
+  animation: modalIn 0.4s cubic-bezier(0.22,1,0.36,1) both;
 }
+
 @keyframes modalIn{from{opacity:0;transform:translateY(30px) scale(0.97)}to{opacity:1;transform:none}}
 
 .fabric-modal-close{
   position:fixed;top:20px;right:24px;z-index:900;
   width:44px;height:44px;background:rgba(91, 34, 138, 0);backdrop-filter:blur(10px);
-  border:1px solid rgba(139, 69, 200, 0);border-radius:0;
+  border:1px solid rgba(139, 69, 200, 0);border-radius:10px;
   cursor:pointer;color:var(--lavender);font-size:18px;
   display:flex;align-items:center;justify-content:center;transition:all 0.2s;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
 }
-.fabric-modal-close:hover{background:var(--plum);transform: scale(1.05);}
+.fabric-modal-close:hover{background:var(--translucent);transform: scale(1.05);}
 
-.fabric-modal-head{
-  display:grid;grid-template-columns:1fr 1fr;gap:36px;
-  margin-bottom:40px;align-items:start;
+.fabric-modal-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 40px;
+  align-items: stretch; /* MUDANÇA: Garante que a coluna de texto acompanhe a altura da imagem */
   padding-top: 10px;
 }
-.fabric-modal-cover{position:relative;overflow:hidden;}
-.fabric-modal-cover img{width:100%;display:block;border:1px solid rgba(139,69,200,0.2);}
-.fabric-modal-meta{display:flex;flex-direction:column;gap:20px;padding-top:8px;}
 
-.fabric-modal-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4vw,64px);font-weight:300;line-height:0.95;color:var(--white);
+.fabric-modal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* MUDANÇA: Removido o gap de -10px que estava quebrando o layout */
+  padding-top: 10px;
+  height: 100%; /* MUDANÇA: Ocupa toda a altura disponível da grid */
+}
+
+.fabric-modal-cover{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#2a1a0e;}
+.fabric-modal-cover img{width:100%;height:100%;flex:1;object-fit:contain;object-position:center;display:block;border:1px solid rgba(139,69,200,0.2);}
+
+
+/* ⬇️ Ajustando as cores do texto para o fundo claro */
+.fabric-modal-name {
+  font-family: 'Baskerville Old Face', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.5;
+  color: var(--deep); /* Era branco, agora é escuro */
   padding-right: 50px;
 }
-.fabric-modal-name em{font-style:italic;color:var(--lavender);display:block;}
-.fabric-modal-tag{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
-.fabric-modal-desc{font-size:15px;line-height:1.85;color:rgba(196,159,224,0.7);}
-.fabric-modal-wpp{
-  display:inline-flex;align-items:center;gap:10px;margin-top:8px;
-  padding:16px 32px;background:#25D366;color:#fff;
-  font-size:10px;letter-spacing:4px;text-transform:uppercase;
-  text-decoration:none;align-self:flex-start;transition:background 0.3s;
+.fabric-modal-name em {
+  font-style: italic;
+  color: var(--plum); /* Era lavender claro, agora é um roxo mais forte */
+  display: block;
 }
+.fabric-modal-tag{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight: 500;}
+.fabric-modal-desc {
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: rgba(49, 4, 75, 0.7); /* Era claro, agora é escuro com transparência */
+}
+
+  .fabric-modal-wpp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto; /* MUDANÇA: Empurra o botão para o final da coluna, alinhando com a base da imagem */
+  padding: 16px 32px;
+  background: #25D366;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.3s;
+}
+
 .fabric-modal-wpp:hover{background:#1ebe5a;}
 .fabric-modal-wpp svg{width:18px;height:18px;fill:currentColor;}
 
-/* Colors section */
-.fabric-modal-colors-title{
-  font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:300;
-  color:var(--lavender);letter-spacing:3px;margin-bottom:20px;
-  padding-bottom:16px;border-bottom:1px solid rgba(139,69,200,0.2);
+/* Ajustando o título das cores para o fundo claro */
+.fabric-modal-colors-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 300;
+  color: var(--deep); /* Escurecido */
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(14, 8, 24, 0.1); /* Linha divisória escura */
 }
-.fabric-modal-colors-title span{
-  font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;
-  color:rgba(196,159,224,0.4);margin-left:12px;
+
+.fabric-modal-colors-title span {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba(82, 16, 99, 0.603);
+  margin-left: 12px;
 }
+
 .fabric-modal-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
@@ -308,8 +387,8 @@ footer ul li a:hover{color:var(--cream);}
 .fabric-modal-swatch-n{
   position:absolute;bottom:0;left:0;right:0;
   padding:10px 10px 8px;
-  background:linear-gradient(to top,rgba(14,8,24,0.9),transparent);
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);
+  background:linear-gradient(to top,rgba(10, 4, 19, 0.438),transparent);
+  font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(250, 246, 255, 0.788);
 }
 
 /* lightbox */
@@ -319,36 +398,73 @@ footer ul li a:hover{color:var(--cream);}
   align-items:center;justify-content:center;padding:20px;
 }
 .lightbox.open{display:flex;}
-.lightbox img{max-width:100%;max-height:90vh;border:1px solid rgba(139,69,200,0.3);}
+.lightbox img{max-width:100%;max-height:90vh;border:1px solid rgba(139, 69, 200, 0);}
 .lightbox-close{position:absolute;top:20px;right:24px;width:40px;height:40px;
-  background:var(--plum);border:none;cursor:pointer;color:#fff;font-size:18px;
-  display:flex;align-items:center;justify-content:center;}
+  background:var(--translucent);border:none;cursor:pointer;color:#ffffff;font-size:15px;
+  display:flex;align-items:center;justify-content:center;border-radius: 10px;}
 .lightbox-prev,.lightbox-next{
   position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(92,34,138,0.6);border:1px solid rgba(139,69,200,0.4);
-  cursor:pointer;color:#fff;width:44px;height:70px;font-size:22px;
-  display:flex;align-items:center;justify-content:center;transition:background 0.2s;
+  background:rgba(91, 34, 138, 0);border:1px solid rgba(139, 69, 200, 0);
+  cursor:pointer;color:#fff;width:44px;height:70px;font-size:30px;
+  display:flex;align-items:center;justify-content:center;transition:background 0.2s;border-radius: 10px;
 }
 .lightbox-prev{left:12px;}
 .lightbox-next{right:12px;}
-.lightbox-prev:hover,.lightbox-next:hover{background:var(--plum);}
+.lightbox-prev:hover,.lightbox-next:hover{background:var(--);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
+  .fabric-modal-meta {
+    height: auto; /* Remove a altura total no mobile para não sobrar espaço em branco */
+  }
+  .fabric-modal-wpp {
+    margin-top: 25px; /* Tira o "auto" e define uma margem fixa */
+    align-self: stretch; /* Faz o botão esticar de um lado ao outro (opcional, mas fica ótimo no mobile) */
+    width: 100%;}
+  .catalog-attributes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  .catalog-attributes > * {
+    flex: 0 0 calc(33.333% - 8px);
+    max-width: calc(33.333% - 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .catalog-attributes img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+  }
+
   .fabric-modal-head{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
-  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+  .footer-bottom{flex-direction:column;gap:px;text-align:center;}
   .nav-links{display:none;}
   .fabrics-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
   .fabric-modal-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
-}
+  }
+
 @media(max-width:600px){
   .fabrics-grid{grid-template-columns:repeat(2,1fr);gap:2px;}
   .fabric-card{aspect-ratio:3/4;}
   .fabric-info{
     transform:none !important;
     padding:16px 12px 14px;
-    background:linear-gradient(to top,rgba(14,8,24,0.97) 0%,rgba(14,8,24,0.55) 70%,transparent 100%);
+    background:linear-gradient(to top,rgba(14,8,24,0.82) 0%,rgba(14,8,24,0.25) 55%,transparent 100%);
+  }
+  .fabric-overlay{
+    background:linear-gradient(to bottom,rgba(14,8,24,0.3) 0%,transparent 28%,transparent 62%,rgba(14,8,24,0.5) 100%) !important;
+  }
+  .fabric-card:hover .fabric-overlay{
+    background:linear-gradient(to bottom,rgba(14,8,24,0.4) 0%,transparent 28%,transparent 62%,rgba(14,8,24,0.6) 100%) !important;
   }
   .fabric-card:hover .fabric-info{transform:none !important;}
   .fabric-name{font-size:17px;margin-bottom:2px;line-height:1.1;padding-right: 0;}
@@ -420,6 +536,53 @@ footer ul li a:hover{color:var(--cream);}
   aspect-ratio: 1; /* Quadradas */
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.041);
 }
 
+/* ── INFORMAÇÕES TÉCNICAS (Specs) ── */
+.specs-container {
+  margin-top: 20px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(14, 8, 24, 0.1);
+  border-bottom: 1px solid rgba(14, 8, 24, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.spec-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.spec-line strong {
+  font-weight: 500;
+  color: var(--deep);
+}
+
+/* ── ÍCONES DOS ATRIBUTOS (Attributes) ── */
+.catalog-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* MUDANÇA: Espaçamento saudável entre os ícones */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Respiro antes do botão */
+  align-items: center;
+}
+
+.catalog-attributes img {
+  width: 85px; /* MUDANÇA: Tamanho médio ideal */
+  height: 85px;
+  object-fit: contain;
+}
+
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+  font-family: cormorant garamond, serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.836);
+}
