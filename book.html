@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lookbook — Alfa & Levy Têxtil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/book-style.css">
+</head>
+<body>
+
+<!-- SVG ICONS -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ico-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></symbol>
+  <symbol id="ico-book" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></symbol>
+</svg>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     LANDING — ESCOLHA DE CATEGORIA
+══════════════════════════════════════════════════════════ -->
+<section id="landing" class="bl-landing">
+
+  <header class="bl-header">
+    <a href="index.html" class="bl-header-back">
+      <svg style="width:16px;height:16px;fill:currentColor;transform:scaleX(-1)"><use href="#ico-arrow"/></svg>
+      Catálogo
+    </a>
+    <div class="bl-header-logo">Alfa <span>&</span> Levy</div>
+    <div></div>
+  </header>
+
+  <div class="bl-content">
+    <p class="bl-eyebrow">Lookbook Digital · 2026</p>
+    <h1 class="bl-title">Books de <em>Tecidos</em></h1>
+    <p class="bl-desc">Selecione a coleção para explorar o lookbook completo com virada de páginas</p>
+
+    <div class="bl-cards">
+
+      <button class="bl-card" onclick="openBook('LISOS')">
+        <div class="bl-card-top">
+          <span class="bl-card-badge">Coleção</span>
+        </div>
+        <div class="bl-card-name">Lisos</div>
+        <div class="bl-card-sub">Cores sólidas · acabamento uniforme</div>
+        <div class="bl-card-arrow">
+          <svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg>
+        </div>
+      </button>
+
+      <button class="bl-card bl-card--featured" onclick="openBook('TEXTURIZADOS')">
+        <div class="bl-card-top">
+          <span class="bl-card-badge">Coleção</span>
+          <span class="bl-card-badge-main">Destaque</span>
+        </div>
+        <div class="bl-card-name">Texturizados</div>
+        <div class="bl-card-sub">Canelados · bouclês · jacquards · e muito mais</div>
+        <div class="bl-card-arrow">
+          <svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg>
+        </div>
+      </button>
+
+      <button class="bl-card" onclick="openBook('ESTAMPADOS')">
+        <div class="bl-card-top">
+          <span class="bl-card-badge">Coleção</span>
+        </div>
+        <div class="bl-card-name">Estampados</div>
+        <div class="bl-card-sub">Padrões exclusivos · desenhos únicos</div>
+        <div class="bl-card-arrow">
+          <svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg>
+        </div>
+      </button>
+
+    </div>
+
+    <p class="bl-hint">Clique em uma coleção para abrir o lookbook completo</p>
+  </div>
+
+  <footer class="bl-footer">
+    <span>Alfa & Levy Têxtil · São Paulo · Brasil</span>
+    <a href="https://wa.me/5511957717470" target="_blank">
+      <svg style="width:14px;height:14px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
+      +55 11 95771-7470
+    </a>
+  </footer>
+
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     READER — LIVRO COM VIRADA DE PÁGINAS
+══════════════════════════════════════════════════════════ -->
+<section id="reader" class="br-reader">
+
+  <!-- Header do reader -->
+  <header class="br-header">
+    <button onclick="closeBook()" class="br-back">
+      <svg style="width:14px;height:14px;fill:currentColor;transform:scaleX(-1)"><use href="#ico-arrow"/></svg>
+      <span class="br-back-label">Coleções</span>
+    </button>
+    <div class="br-header-center">
+      <span class="br-header-cat" id="brHeaderCat">—</span>
+      <span class="br-header-fabric" id="brHeaderFabric"></span>
+    </div>
+    <div class="br-header-right">
+      <span class="br-counter" id="brCounter"></span>
+      <a id="brWpp" href="https://wa.me/5511957717470" target="_blank" class="br-wpp-btn">
+        <svg style="width:14px;height:14px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
+        <span>Pedir Amostra</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Stage: área do livro -->
+  <div class="br-stage">
+
+    <button class="br-nav br-nav-prev" id="btnPrev" onclick="prevPage()" title="Página anterior">&#8249;</button>
+
+    <!-- Wrapper de perspectiva -->
+    <div class="br-perspective" id="brPerspective">
+      <div class="br-book" id="brBook">
+
+        <!-- Página esquerda -->
+        <div class="br-page br-page-left" id="pageLeft"></div>
+
+        <!-- Página direita -->
+        <div class="br-page br-page-right" id="pageRight"></div>
+
+        <!-- Flipper (animação de virada) -->
+        <div class="br-flipper" id="brFlipper">
+          <div class="br-flipper-face br-flipper-front" id="flipFront"></div>
+          <div class="br-flipper-face br-flipper-back" id="flipBack"></div>
+        </div>
+
+        <!-- Sombra da lombada -->
+        <div class="br-spine"></div>
+
+      </div>
+    </div>
+
+    <button class="br-nav br-nav-next" id="btnNext" onclick="nextPage()" title="Próxima página">&#8250;</button>
+
+  </div>
+
+  <!-- Footer: progresso e nome do tecido -->
+  <div class="br-footer">
+    <span class="br-footer-fabric" id="brFooterFabric"></span>
+    <div class="br-progress">
+      <div class="br-progress-bar">
+        <div class="br-progress-fill" id="brProgressFill"></div>
+      </div>
+      <span class="br-progress-label" id="brProgressLabel"></span>
+    </div>
+  </div>
+
+</section>
+
+
+<script>
+// ══════════════════════════════════════════════════════════
+//  BOOK DATA — todos os tecidos
+//  bookPages = número de fotos em images/book/KEY/photo-01.jpg ...
+// ══════════════════════════════════════════════════════════
+const BOOK_DATA = {
+  // ── TEXTURIZADOS ────────────────────────────────────────
+  ANARRUGA_BRILHANTE:     { name:'Anarruga Brilhante',     category:'TEXTURIZADOS', tag:'Moda Praia · Lingerie',           bookPages:0 },
+  ANARRUGA_PRAIA:         { name:'Anarruga Praia',         category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:0 },
+  AREZZO:                 { name:'Arezzo',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:0 },
+  BOUCLE:                 { name:'Bouclê',                 category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:0 },
+  BOUCLE_PETALAS:         { name:'Bouclê Pétalas',         category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:0 },
+  CANELADO_BLACKOUT:      { name:'Canelado Blackout',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  CANELADO_DE_COMPRESSAO: { name:'Canelado Compressão',    category:'TEXTURIZADOS', tag:'Fitness',                        bookPages:0 },
+  CANELADO_EDEN:          { name:'Canelado Eden',          category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:0 },
+  CANELADO_FUJI:          { name:'Canelado Fuji',          category:'TEXTURIZADOS', tag:'Moda · Fitness',                  bookPages:0 },
+  CANELADO_LENATEX:       { name:'Canelado Lenatex',       category:'TEXTURIZADOS', tag:'Lingerie · Moda',                 bookPages:0 },
+  CANELADO_PILLE:         { name:'Canelado Pille',         category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  CANELADO_POLIESTER:     { name:'Canelado Poliéster',     category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:0 },
+  CANELADO_POWER:         { name:'Canelado Power',         category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:0 },
+  CANELADO_TREND_MOVE:    { name:'Canelado Trend Move',    category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:0 },
+  CANELADO_WONDER:        { name:'Canelado Wonder',        category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:0 },
+  CARMEL:                 { name:'Carmel',                 category:'TEXTURIZADOS', tag:'Fitness · Moda Praia · Casual',   bookPages:0 },
+  CREPINHO:               { name:'Crepinho',               category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:0 },
+  CREPONADO:              { name:'Creponado',              category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:0 },
+  CROCHE_SANTORINI:       { name:'Crochê Santorini',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  CROCHETE:               { name:'Crochete',               category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:0 },
+  CRUNCH_LISTRADO:        { name:'Crunch Listrado',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  DIAMOND:                { name:'Diamond',                category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:0 },
+  JACQUARD_BROCADO:       { name:'Jacquard Brocado',       category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:0 },
+  JACQUARD_CONCHAS:       { name:'Jacquard Conchas',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_CONCHINHAS:    { name:'Jacquard Conchinhas',    category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_DEGRADE:       { name:'Jacquard Degradê',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_GITA:          { name:'Jacquard Gita',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_KASHIMIR:      { name:'Jacquard Kashimir',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_LEAF:          { name:'Jacquard Leaf',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_LINES:         { name:'Jacquard Lines',         category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  JACQUARD_NILO:          { name:'Jacquard Nilo',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:0 },
+  JACQUARD_WINNER:        { name:'Jacquard Winner',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  LIS:                    { name:'LIS',                    category:'TEXTURIZADOS', tag:'Moda Praia · Fitness · Lingerie', bookPages:0 },
+  LUREX_3_DOURADO:        { name:'Lurex 3 Dourado',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  LUREX_3_PRATA:          { name:'Lurex 3 Prata',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  LUREX_4_E_OUTROS:       { name:'Lurex 4 e Outros',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  LUX_DUBAI:              { name:'Lux Dubai',              category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  LYCRA_JEANS:            { name:'Lycra Jeans',            category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  MACRAME:                { name:'Macramê',                category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  MALIBU:                 { name:'Malibu',                 category:'TEXTURIZADOS', tag:'Fitness · Moda Casual · Praia',   bookPages:0 },
+  MALTE:                  { name:'Malte',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:0 },
+  MARRAKESH:              { name:'Marrakesh',              category:'TEXTURIZADOS', tag:'Fitness · Lingerie · Praia',      bookPages:0 },
+  MARSELHA:               { name:'Marselha',               category:'TEXTURIZADOS', tag:'Fitness · Moda Praia',            bookPages:0 },
+  MONTANA:                { name:'Montana',                category:'TEXTURIZADOS', tag:'Fitness',                        bookPages:2 },
+  POINTS:                 { name:'Points',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  POSITANO:               { name:'Positano',               category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  ROCKS:                  { name:'Rocks',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  SAINT_MARTIN:           { name:'Saint Martin',           category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  SEREIA:                 { name:'Sereia',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  SUKUZA:                 { name:'Sukuza',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  TEXAS:                  { name:'Texas',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  VERONA:                 { name:'Verona',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:0 },
+  // ── ESTAMPADOS ──────────────────────────────────────────
+  SARDINHA:               { name:'Sardinha',               category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:0 },
+  SARDINHAS:              { name:'Sardinhas',              category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:0 },
+};
+
+// ══════════════════════════════════════════════════════════
+//  ESTADO DO READER
+// ══════════════════════════════════════════════════════════
+let pages        = [];
+let currentSpread = 0;
+let totalSpreads  = 0;
+let isAnimating   = false;
+let activeCategory = null;
+let isMobileView  = false;
+// Em mobile mostramos uma página por vez
+let mobilePages  = [];
+let mobilePage   = 0;
+
+// ── UTILITÁRIOS ────────────────────────────────────────────
+function pad(n) { return String(n).padStart(2, '0'); }
+
+function checkMobile() {
+  isMobileView = window.innerWidth < 700;
+}
+
+// ── GERAÇÃO DE PÁGINAS ─────────────────────────────────────
+// Cada fabric gera:
+//   páginas[even] = intro (esquerda)
+//   páginas[even+1] = foto capa do catálogo (direita)
+//   páginas[even+2..] = fotos do book (pares)
+function generatePages(category) {
+  const result = [];
+
+  // Spread 0: [branco | capa do livro]
+  result.push({ type: 'blank' });
+  result.push({ type: 'book-cover', category });
+
+  const entries = Object.entries(BOOK_DATA).filter(([, f]) => f.category === category);
+
+  entries.forEach(([key, fabric], idx) => {
+    // Garante que cada tecido começa numa página esquerda (índice par)
+    if (result.length % 2 !== 0) result.push({ type: 'blank' });
+
+    // Página intro (esquerda) + capa do catálogo (direita)
+    result.push({ type: 'fabric-intro', key, fabric, fabricIndex: idx });
+    result.push({
+      type: 'fabric-cover',
+      key, fabric,
+      src: `images/${category}/${key}/page-01.jpg`
+    });
+
+    // Fotos do lookbook
+    for (let i = 1; i <= (fabric.bookPages || 0); i++) {
+      result.push({
+        type: 'fabric-photo',
+        key, fabric,
+        src: `images/book/${category}/${key}/photo-${pad(i)}.jpg`,
+        n: i
+      });
+    }
+
+    // Pad para manter contagem par
+    if (result.length % 2 !== 0) result.push({ type: 'blank' });
+  });
+
+  return result;
+}
+
+// ── RENDER DE CADA TIPO DE PÁGINA ─────────────────────────
+const CAT_LABELS = { LISOS: 'Lisos', TEXTURIZADOS: 'Texturizados', ESTAMPADOS: 'Estampados' };
+
+function renderPage(page) {
+  if (!page || page.type === 'blank') return renderBlank();
+  switch (page.type) {
+    case 'book-cover':    return renderCover(page);
+    case 'fabric-intro':  return renderIntro(page);
+    case 'fabric-cover':
+    case 'fabric-photo':  return renderPhoto(page);
+    default:              return renderBlank();
+  }
+}
+
+function renderBlank() {
+  return `<div class="pg pg-blank">
+    <div class="pg-blank-watermark">Alfa <em>&</em> Levy</div>
+  </div>`;
+}
+
+function renderCover(page) {
+  const label = CAT_LABELS[page.category] || page.category;
+  const count = Object.values(BOOK_DATA).filter(f => f.category === page.category).length;
+  return `<div class="pg pg-cover">
+    <div class="pg-cover-inner">
+      <div class="pg-cover-eyebrow">Lookbook Digital · 2026</div>
+      <div class="pg-cover-line"></div>
+      <div class="pg-cover-brand">Alfa <em>&</em> Levy</div>
+      <div class="pg-cover-cat">${label}</div>
+      <div class="pg-cover-count">${count} tecidos</div>
+      <div class="pg-cover-line"></div>
+      <div class="pg-cover-footer">São Paulo · Brasil</div>
+    </div>
+  </div>`;
+}
+
+function renderIntro(page) {
+  const num = pad(page.fabricIndex + 1);
+  return `<div class="pg pg-intro">
+    <div class="pg-intro-num">${num}</div>
+    <div class="pg-intro-body">
+      <div class="pg-intro-cat">${CAT_LABELS[page.fabric.category] || page.fabric.category}</div>
+      <div class="pg-intro-name">${page.fabric.name}</div>
+      <div class="pg-intro-divider"></div>
+      <div class="pg-intro-tag">${page.fabric.tag}</div>
+    </div>
+    <div class="pg-intro-wm">Alfa & Levy</div>
+  </div>`;
+}
+
+function renderPhoto(page) {
+  const isCover = page.type === 'fabric-cover';
+  const label = isCover ? page.fabric.name : `Foto ${page.n}`;
+  const hasBk = !isCover;
+  return `<div class="pg pg-photo ${isCover ? 'pg-photo-cover' : ''}">
+    <img src="${page.src}" alt="${page.fabric.name}" loading="${isCover ? 'eager' : 'lazy'}">
+    <div class="pg-photo-overlay">
+      <span class="pg-photo-label">${label}</span>
+      ${hasBk ? `<span class="pg-photo-n">${page.n}</span>` : ''}
+    </div>
+    ${isCover ? `<div class="pg-photo-tag">${page.fabric.tag}</div>` : ''}
+  </div>`;
+}
+
+// ── ABRIR / FECHAR BOOK ───────────────────────────────────
+function openBook(category, jumpToFabric) {
+  checkMobile();
+  activeCategory = category;
+
+  pages = generatePages(category);
+  totalSpreads = pages.length / 2;
+
+  // Encontra spread inicial
+  let startSpread = 0;
+  if (jumpToFabric) {
+    for (let i = 0; i < pages.length; i++) {
+      if (pages[i].key === jumpToFabric && pages[i].type === 'fabric-intro') {
+        startSpread = Math.floor(i / 2);
+        break;
+      }
+    }
+  }
+
+  // Em mobile: navegação página a página
+  mobilePages = pages.filter(p => p && p.type !== 'blank');
+  mobilePage = 0;
+  if (jumpToFabric) {
+    for (let i = 0; i < mobilePages.length; i++) {
+      if (mobilePages[i].key === jumpToFabric) { mobilePage = i; break; }
+    }
+  }
+
+  // Mostra reader
+  document.getElementById('landing').style.display = 'none';
+  document.getElementById('reader').style.display = 'flex';
+  document.getElementById('brHeaderCat').textContent = CAT_LABELS[category] || category;
+
+  // Atualiza link do WhatsApp com categoria
+  const wppMsg = `https://wa.me/5511957717470?text=Olá!%20Vi%20o%20lookbook%20de%20${encodeURIComponent(CAT_LABELS[category] || category)}%20e%20gostaria%20de%20mais%20informações.`;
+  document.getElementById('brWpp').href = wppMsg;
+
+  currentSpread = startSpread;
+
+  if (isMobileView) {
+    renderMobile(mobilePage);
+  } else {
+    renderSpread(startSpread);
+  }
+}
+
+function closeBook() {
+  document.getElementById('reader').style.display = 'none';
+  document.getElementById('landing').style.display = 'flex';
+  isAnimating = false;
+  document.getElementById('brFlipper').style.display = 'none';
+}
+
+// ── RENDER SPREAD (DESKTOP) ───────────────────────────────
+function renderSpread(idx) {
+  currentSpread = Math.max(0, Math.min(idx, totalSpreads - 1));
+  document.getElementById('pageLeft').innerHTML  = renderPage(pages[currentSpread * 2]);
+  document.getElementById('pageRight').innerHTML = renderPage(pages[currentSpread * 2 + 1]);
+  document.getElementById('brFlipper').style.display = 'none';
+  updateUI();
+}
+
+function updateUI() {
+  // Fabric ativa
+  const left  = pages[currentSpread * 2];
+  const right = pages[currentSpread * 2 + 1];
+  let fabricName = '';
+  for (const p of [right, left]) {
+    if (p && p.fabric) { fabricName = p.fabric.name; break; }
+  }
+  document.getElementById('brHeaderFabric').textContent = fabricName ? '— ' + fabricName : '';
+  document.getElementById('brFooterFabric').textContent = fabricName;
+
+  // Progresso
+  const pct = totalSpreads > 1 ? (currentSpread / (totalSpreads - 1)) * 100 : 100;
+  document.getElementById('brProgressFill').style.width = pct + '%';
+  document.getElementById('brProgressLabel').textContent = `${currentSpread + 1} / ${totalSpreads}`;
+  document.getElementById('brCounter').textContent = `${currentSpread + 1} / ${totalSpreads}`;
+
+  // Botões
+  document.getElementById('btnPrev').disabled = currentSpread <= 0;
+  document.getElementById('btnNext').disabled = currentSpread >= totalSpreads - 1;
+
+  // WhatsApp dinâmico ao tecido
+  if (fabricName) {
+    const wppMsg = `https://wa.me/5511957717470?text=Olá!%20Tenho%20interesse%20no%20tecido%20${encodeURIComponent(fabricName)}%20do%20lookbook.`;
+    document.getElementById('brWpp').href = wppMsg;
+  }
+}
+
+// ── NAVEGAÇÃO COM FLIP (DESKTOP) ──────────────────────────
+function nextPage() {
+  if (isMobileView) { nextMobile(); return; }
+  if (isAnimating || currentSpread >= totalSpreads - 1) return;
+
+  const next = currentSpread + 1;
+  const elLeft    = document.getElementById('pageLeft');
+  const elRight   = document.getElementById('pageRight');
+  const elFlipper = document.getElementById('brFlipper');
+  const elFront   = document.getElementById('flipFront');
+  const elBack    = document.getElementById('flipBack');
+
+  // Front: página direita atual | Back: próxima página esquerda
+  elFront.innerHTML = elRight.innerHTML;
+  elBack.innerHTML  = renderPage(pages[next * 2]);
+
+  // Direita já recebe a próxima página direita (por baixo do flipper)
+  elRight.innerHTML = renderPage(pages[next * 2 + 1]);
+
+  // Posiciona o flipper na metade direita
+  Object.assign(elFlipper.style, {
+    left: '50%', top: '0', width: '50%', height: '100%',
+    transformOrigin: '0% 50%',
+    transform: 'rotateY(0deg)',
+    display: 'block'
+  });
+
+  isAnimating = true;
+  // Força reflow antes de iniciar transição
+  void elFlipper.offsetHeight;
+  elFlipper.classList.add('br-flipping');
+
+  // Metade do caminho: atualiza página esquerda (está coberta pelo flipper)
+  setTimeout(() => {
+    elLeft.innerHTML = renderPage(pages[next * 2]);
+  }, 360);
+
+  // Fim da animação
+  setTimeout(() => {
+    elFlipper.classList.remove('br-flipping');
+    elFlipper.style.display = 'none';
+    currentSpread = next;
+    isAnimating = false;
+    updateUI();
+  }, 720);
+}
+
+function prevPage() {
+  if (isMobileView) { prevMobile(); return; }
+  if (isAnimating || currentSpread <= 0) return;
+
+  const prev = currentSpread - 1;
+  const elLeft    = document.getElementById('pageLeft');
+  const elRight   = document.getElementById('pageRight');
+  const elFlipper = document.getElementById('brFlipper');
+  const elFront   = document.getElementById('flipFront');
+  const elBack    = document.getElementById('flipBack');
+
+  // Front: página esquerda atual | Back: página direita anterior
+  elFront.innerHTML = elLeft.innerHTML;
+  elBack.innerHTML  = renderPage(pages[prev * 2 + 1]);
+
+  // Esquerda já recebe a anterior esquerda
+  elLeft.innerHTML = renderPage(pages[prev * 2]);
+
+  // Flipper na metade esquerda, gira para a direita
+  Object.assign(elFlipper.style, {
+    left: '0', top: '0', width: '50%', height: '100%',
+    transformOrigin: '100% 50%',
+    transform: 'rotateY(0deg)',
+    display: 'block'
+  });
+
+  isAnimating = true;
+  void elFlipper.offsetHeight;
+  elFlipper.classList.add('br-flipping-back');
+
+  setTimeout(() => {
+    elRight.innerHTML = renderPage(pages[prev * 2 + 1]);
+  }, 360);
+
+  setTimeout(() => {
+    elFlipper.classList.remove('br-flipping-back');
+    elFlipper.style.display = 'none';
+    currentSpread = prev;
+    isAnimating = false;
+    updateUI();
+  }, 720);
+}
+
+// ── MOBILE: uma página por vez com fade ──────────────────
+function renderMobile(idx) {
+  mobilePage = Math.max(0, Math.min(idx, mobilePages.length - 1));
+  const page = mobilePages[mobilePage];
+  const elRight = document.getElementById('pageRight');
+  elRight.innerHTML = renderPage(page);
+  elRight.style.width = '100%';
+  document.getElementById('pageLeft').style.display = 'none';
+  document.getElementById('brSpine') && (document.getElementById('brSpine').style.display = 'none');
+
+  // UI
+  let fabricName = page && page.fabric ? page.fabric.name : '';
+  document.getElementById('brHeaderFabric').textContent = fabricName ? '— ' + fabricName : '';
+  document.getElementById('brFooterFabric').textContent = fabricName;
+  const pct = mobilePages.length > 1 ? (mobilePage / (mobilePages.length - 1)) * 100 : 100;
+  document.getElementById('brProgressFill').style.width = pct + '%';
+  document.getElementById('brProgressLabel').textContent = `${mobilePage + 1} / ${mobilePages.length}`;
+  document.getElementById('brCounter').textContent = `${mobilePage + 1} / ${mobilePages.length}`;
+  document.getElementById('btnPrev').disabled = mobilePage <= 0;
+  document.getElementById('btnNext').disabled = mobilePage >= mobilePages.length - 1;
+}
+
+function nextMobile() { if (mobilePage < mobilePages.length - 1) renderMobile(mobilePage + 1); }
+function prevMobile() { if (mobilePage > 0) renderMobile(mobilePage - 1); }
+
+// ── TECLADO ───────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (document.getElementById('reader').style.display === 'none') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextPage();
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prevPage();
+  if (e.key === 'Escape') closeBook();
+});
+
+// ── SWIPE (MOBILE / TOUCH) ────────────────────────────────
+let touchStartX = 0, touchStartY = 0;
+document.getElementById('reader')?.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+document.getElementById('reader')?.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    if (dx < 0) nextPage(); else prevPage();
+  }
+}, { passive: true });
+
+// ── RESIZE ────────────────────────────────────────────────
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const wasMobile = isMobileView;
+    checkMobile();
+    if (activeCategory && wasMobile !== isMobileView) {
+      // Reconstrói o layout ao mudar entre mobile e desktop
+      if (isMobileView) {
+        renderMobile(mobilePage);
+      } else {
+        document.getElementById('pageLeft').style.display = '';
+        document.getElementById('pageRight').style.width = '';
+        renderSpread(currentSpread);
+      }
+    }
+  }, 200);
+});
+
+// ── URL PARAMS: abre direto em categoria/tecido ───────────
+window.addEventListener('DOMContentLoaded', () => {
+  const params   = new URLSearchParams(location.search);
+  const cat      = params.get('category');
+  const fabric   = params.get('fabric');
+  if (cat) openBook(cat, fabric || null);
+});
+</script>
+</body>
+</html>

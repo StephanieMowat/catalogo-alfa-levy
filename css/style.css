@@ -295,20 +295,19 @@ footer ul li a:hover{color:var(--cream);}
   grid-template-columns: 1fr 1fr;
   gap: 36px;
   margin-bottom: 40px;
-  align-items: stretch; /* MUDANÇA: Garante que a coluna de texto acompanhe a altura da imagem */
+  align-items: start;
   padding-top: 10px;
 }
 
 .fabric-modal-meta {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* MUDANÇA: Removido o gap de -10px que estava quebrando o layout */
+  gap: 15px;
   padding-top: 10px;
-  height: 100%; /* MUDANÇA: Ocupa toda a altura disponível da grid */
 }
 
-.fabric-modal-cover{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#2a1a0e;}
-.fabric-modal-cover img{width:100%;height:100%;flex:1;object-fit:contain;object-position:center;display:block;border:1px solid rgba(139,69,200,0.2);}
+.fabric-modal-cover{position:relative;overflow:hidden;aspect-ratio:3/4;background:#2a1a0e;}
+.fabric-modal-cover img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border:1px solid rgba(139,69,200,0.2);}
 
 
 /* ⬇️ Ajustando as cores do texto para o fundo claro */
@@ -329,7 +328,8 @@ footer ul li a:hover{color:var(--cream);}
   font-size: 17px;
   line-height: 1.25;
   font-weight: 400;
-  color: rgba(49, 4, 75, 0.7); /* Era claro, agora é escuro com transparência */
+  color: rgba(49, 4, 75, 0.7);
+  margin-top: -10px; /* Era claro, agora é escuro com transparência */
 }
 
   .fabric-modal-wpp {
@@ -337,7 +337,7 @@ footer ul li a:hover{color:var(--cream);}
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: auto; /* MUDANÇA: Empurra o botão para o final da coluna, alinhando com a base da imagem */
+  margin-top: 10px;
   padding: 16px 32px;
   background: #25D366;
   color: #fff;
@@ -345,7 +345,7 @@ footer ul li a:hover{color:var(--cream);}
   letter-spacing: 4px;
   text-transform: uppercase;
   text-decoration: none;
-  align-self: flex-start;
+  align-self: center;
   transition: background 0.3s;
 }
 
@@ -541,13 +541,13 @@ footer ul li a:hover{color:var(--cream);}
 
 /* ── INFORMAÇÕES TÉCNICAS (Specs) ── */
 .specs-container {
-  margin-top: 20px;
+  margin-top: -5px;
   padding: 18px 0;
   border-top: 1px solid rgba(14, 8, 24, 0.1);
   border-bottom: 1px solid rgba(14, 8, 24, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 .spec-line {
@@ -566,16 +566,64 @@ footer ul li a:hover{color:var(--cream);}
 .catalog-attributes {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* MUDANÇA: Espaçamento saudável entre os ícones */
-  margin-top: 20px;
-  margin-bottom: 20px; /* Respiro antes do botão */
+  gap: 15px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.catalog-attributes > * {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .catalog-attributes img {
-  width: 85px; /* MUDANÇA: Tamanho médio ideal */
+  width: 85px;
   height: 85px;
   object-fit: contain;
+}
+
+/* ── Regras de layout por quantidade — apenas desktop ── */
+@media(min-width:901px){
+
+  /* ≤4 itens: centralizado */
+  .catalog-attributes:has(> *:first-child:nth-last-child(-n+4)) {
+    justify-content: center;
+  }
+
+  /* 6 itens: 3 + 3 */
+  .catalog-attributes:has(> *:first-child:nth-last-child(6)) {
+    justify-content: center;
+  }
+  .catalog-attributes:has(> *:first-child:nth-last-child(6)) > * {
+    flex: 0 0 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+  }
+
+  /* 7 itens: 3 em cima (centralizados) + 4 embaixo */
+  .catalog-attributes:has(> *:first-child:nth-last-child(7)) {
+    justify-content: center;
+  }
+  .catalog-attributes:has(> *:first-child:nth-last-child(7)) > *:nth-child(-n+3) {
+    flex: 0 0 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+  }
+  .catalog-attributes:has(> *:first-child:nth-last-child(7)) > *:nth-child(n+4) {
+    flex: 0 0 calc(25% - 12px);
+    max-width: calc(25% - 12px);
+  }
+
+  /* 8 itens: 4 + 4 */
+  .catalog-attributes:has(> *:first-child:nth-last-child(8)) {
+    justify-content: center;
+  }
+  .catalog-attributes:has(> *:first-child:nth-last-child(8)) > * {
+    flex: 0 0 calc(25% - 12px);
+    max-width: calc(25% - 12px);
+  }
 }
 
 
@@ -586,3 +634,28 @@ footer a {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.836);
 }
+
+/* ── BOTÃO VER BOOK (modal) ── */
+.fabric-modal-book {
+  display: none; /* mostrado via JS quando bookUrl existe */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--deep);
+  border: 1px solid rgba(14,8,24,0.3);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: center;
+  transition: all 0.3s;
+}
+.fabric-modal-book:hover {
+  background: var(--deep);
+  color: var(--cream);
+  border-color: var(--deep);
+}
+.fabric-modal-book svg { flex-shrink: 0; }

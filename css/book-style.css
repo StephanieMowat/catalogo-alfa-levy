@@ -1,0 +1,894 @@
+/* ══════════════════════════════════════════════════════════
+   BOOK-STYLE.CSS — Lookbook Alfa & Levy Têxtil
+   Landing de categorias + Leitor com virada de páginas 3D
+   ══════════════════════════════════════════════════════════ */
+
+/* ── VARIÁVEIS ────────────────────────────────────────────── */
+:root {
+  --deep:      #0e0818;
+  --grape:     #2b1050;
+  --plum:      #5c228a;
+  --violet:    #8b45c8;
+  --lavender:  #c49fe0;
+  --gold:      #c8a03a;
+  --gold-lt:   #e8c55a;
+  --gold-dk:   #9a7820;
+  --cream:     #faf6ef;
+  --cream-dk:  #f0e8d8;
+  --warm:      #ede4d0;
+  --ink:       #1a1020;
+  --text:      #2a1e38;
+  --muted:     rgba(42,30,56,0.45);
+}
+
+/* ── RESET ────────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--deep);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   LANDING — ESCOLHA DE CATEGORIA
+   ══════════════════════════════════════════════════════════ */
+
+.bl-landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--deep);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Textura sutil de fundo */
+.bl-landing::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(92,34,138,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(200,160,58,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Header ── */
+.bl-header {
+  position: relative; z-index: 10;
+  padding: 24px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(200,160,58,0.1);
+}
+
+.bl-header-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.bl-header-back:hover { color: var(--gold); }
+
+.bl-header-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.bl-header-logo span { color: var(--plum); font-weight: 300; }
+
+/* ── Conteúdo central ── */
+.bl-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 5vw;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.bl-eyebrow {
+  font-size: 10px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.bl-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.bl-title em {
+  font-style: italic;
+  color: var(--lavender);
+  display: block;
+}
+
+.bl-desc {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 60px;
+  max-width: 500px;
+}
+
+/* ── Cards de categoria ── */
+.bl-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.bl-card {
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(200,160,58,0.18);
+  padding: 36px 40px 28px;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-align: left;
+  min-width: 240px;
+  flex: 1;
+  max-width: 300px;
+  overflow: hidden;
+}
+.bl-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,160,58,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.bl-card:hover {
+  border-color: rgba(200,160,58,0.5);
+  background: rgba(255,255,255,0.07);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(200,160,58,0.08);
+}
+.bl-card:hover::before { opacity: 1; }
+
+.bl-card--featured {
+  background: rgba(200,160,58,0.06);
+  border-color: rgba(200,160,58,0.35);
+}
+.bl-card--featured:hover {
+  background: rgba(200,160,58,0.1);
+  border-color: var(--gold);
+}
+
+.bl-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.bl-card-badge {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(200,160,58,0.5);
+}
+.bl-card-badge-main {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 3px 10px;
+  border: 1px solid rgba(200,160,58,0.4);
+}
+
+.bl-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.bl-card-sub {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.bl-card-arrow {
+  color: var(--gold);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+.bl-card:hover .bl-card-arrow {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+.bl-hint {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+
+/* ── Footer ── */
+.bl-footer {
+  padding: 24px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(200,160,58,0.08);
+  position: relative; z-index: 10;
+}
+.bl-footer span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+.bl-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(200,160,58,0.5);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.bl-footer a:hover { color: var(--gold); }
+
+
+/* ══════════════════════════════════════════════════════════
+   READER — LIVRO COM VIRADA DE PÁGINAS
+   ══════════════════════════════════════════════════════════ */
+
+.br-reader {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #120a1e;
+  background-image:
+    radial-gradient(ellipse 100% 50% at 50% 0%, rgba(43,16,80,0.6) 0%, transparent 60%);
+}
+
+/* ── Header do reader ── */
+.br-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 52px;
+  background: rgba(14,8,24,0.95);
+  border-bottom: 1px solid rgba(200,160,58,0.12);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.br-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.3s;
+  white-space: nowrap;
+  padding: 0;
+}
+.br-back:hover { color: var(--gold); }
+
+.br-header-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-width: 0;
+}
+.br-header-cat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.br-header-fabric {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 260px;
+}
+
+.br-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.br-counter {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+
+.br-wpp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 18px;
+  background: #25D366;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s;
+  white-space: nowrap;
+  font-family: 'Jost', sans-serif;
+}
+.br-wpp-btn:hover { background: #1ebe5a; }
+
+/* ── Stage: área central do livro ── */
+.br-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 24px 50px;
+  position: relative;
+  min-height: 0;
+}
+
+/* ── Wrapper de perspectiva ── */
+.br-perspective {
+  perspective: 2200px;
+  perspective-origin: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 1100px;
+  min-height: 0;
+}
+
+/* ── Book (spread aberto) ── */
+.br-book {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: min(680px, calc(100vh - 180px));
+  max-width: 960px;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(200,160,58,0.12);
+}
+
+/* ── Páginas ── */
+.br-page {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: var(--cream);
+  flex-shrink: 0;
+}
+.br-page-left  { border-right: none; }
+.br-page-right { border-left: none; }
+
+/* ── Lombada (sombra central) ── */
+.br-spine {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%; width: 0;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+.br-spine::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: -12px; width: 24px;
+  background: linear-gradient(to right,
+    rgba(0,0,0,0.12) 0%,
+    rgba(0,0,0,0.25) 40%,
+    rgba(0,0,0,0.25) 60%,
+    rgba(0,0,0,0.12) 100%
+  );
+}
+.br-spine::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: -1px; width: 2px;
+  background: linear-gradient(to bottom,
+    rgba(200,160,58,0.15),
+    rgba(200,160,58,0.3),
+    rgba(200,160,58,0.15)
+  );
+}
+
+/* ── Flipper (animação 3D) ── */
+.br-flipper {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transform-style: preserve-3d;
+  display: none;
+  z-index: 30;
+}
+
+.br-flipper-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.br-flipper-back {
+  transform: rotateY(180deg);
+}
+
+/* Sombra dinâmica durante a virada */
+.br-flipper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.15), transparent 40%, transparent 60%, rgba(0,0,0,0.08));
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Estados de animação */
+.br-flipper.br-flipping {
+  transform: rotateY(-180deg) !important;
+  transition: transform 0.72s cubic-bezier(0.5, 0.05, 0.3, 1.0) !important;
+}
+.br-flipper.br-flipping-back {
+  transform: rotateY(180deg) !important;
+  transition: transform 0.72s cubic-bezier(0.5, 0.05, 0.3, 1.0) !important;
+}
+
+/* ── Seta de navegação ── */
+.br-nav {
+  background: none;
+  border: 1px solid rgba(200,160,58,0.2);
+  color: rgba(255,255,255,0.5);
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 16px;
+  height: 72px;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  font-family: Georgia, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.br-nav:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200,160,58,0.05);
+}
+.br-nav:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* ── Footer do reader ── */
+.br-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  background: rgba(10,5,18,0.9);
+  border-top: 1px solid rgba(200,160,58,0.08);
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+.br-footer-fabric {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.35);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.br-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.br-progress-bar {
+  width: 120px;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.br-progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--gold);
+  transition: width 0.5s ease;
+}
+.br-progress-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   ESTILOS DAS PÁGINAS (conteúdo interno)
+   ══════════════════════════════════════════════════════════ */
+
+/* Todas as páginas */
+.pg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Página em branco ── */
+.pg-blank {
+  background: var(--cream);
+  align-items: center;
+  justify-content: center;
+}
+.pg-blank-watermark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(42,30,56,0.06);
+  user-select: none;
+}
+.pg-blank-watermark em {
+  font-style: italic;
+  color: rgba(92,34,138,0.08);
+}
+
+/* ── Capa do livro ── */
+.pg-cover {
+  background: linear-gradient(160deg, var(--grape) 0%, var(--deep) 60%, #06020e 100%);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.pg-cover::before {
+  content: '';
+  position: absolute;
+  top: -30%; left: -30%;
+  width: 160%; height: 160%;
+  background: radial-gradient(ellipse at 30% 40%, rgba(200,160,58,0.08) 0%, transparent 60%);
+}
+.pg-cover::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(255,255,255,0.012) 50px,
+      rgba(255,255,255,0.012) 51px
+    );
+}
+
+.pg-cover-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  gap: 16px;
+}
+
+.pg-cover-eyebrow {
+  font-size: 9px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: rgba(200,160,58,0.55);
+}
+
+.pg-cover-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.pg-cover-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1;
+}
+.pg-cover-brand em {
+  font-style: italic;
+  color: var(--lavender);
+}
+
+.pg-cover-cat {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 2.8vw, 30px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.pg-cover-count {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(200,160,58,0.4);
+  text-transform: uppercase;
+}
+
+.pg-cover-footer {
+  font-size: 9px;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ── Página intro do tecido ── */
+.pg-intro {
+  background: var(--cream);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  justify-content: flex-end;
+}
+
+.pg-intro-num {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(100px, 16vw, 180px);
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(200,160,58,0.07);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -5px;
+}
+
+.pg-intro-body {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 12px;
+}
+
+.pg-intro-cat {
+  font-size: 9px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: rgba(200,160,58,0.55);
+  margin-bottom: 16px;
+}
+
+.pg-intro-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4.5vw, 56px);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.pg-intro-divider {
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin-bottom: 16px;
+}
+
+.pg-intro-tag {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.pg-intro-wm {
+  position: absolute;
+  bottom: 28px;
+  right: 32px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(42,30,56,0.15);
+  user-select: none;
+}
+
+/* ── Página de foto ── */
+.pg-photo {
+  background: #1a1020;
+  position: relative;
+}
+
+.pg-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pg-photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 20px 16px;
+  background: linear-gradient(to top, rgba(14,8,24,0.7), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.pg-photo-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+.pg-photo-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+  line-height: 1;
+}
+
+.pg-photo-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.3);
+  padding: 4px 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* Destaque na capa do tecido */
+.pg-photo-cover .pg-photo-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+}
+.pg-photo-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(14,8,24,0.5) 100%);
+  pointer-events: none;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .br-stage { padding: 16px 12px; gap: 8px; }
+  .br-nav { font-size: 32px; padding: 0 10px; height: 56px; }
+  .br-header-fabric { display: none; }
+  .br-wpp-btn span { display: none; }
+  .br-wpp-btn { padding: 7px 12px; }
+}
+
+@media (max-width: 700px) {
+  /* Landing */
+  .bl-cards { flex-direction: column; }
+  .bl-card { max-width: 100%; min-width: unset; }
+  .bl-footer { flex-direction: column; gap: 8px; text-align: center; }
+
+  /* Reader — página única */
+  .br-stage { padding: 12px 8px; }
+  .br-book { width: 100%; max-width: 440px; }
+  .br-page-left  { display: none !important; }
+  .br-page-right { width: 100% !important; }
+  .br-spine       { display: none; }
+  .br-back-label  { display: none; }
+  .br-counter     { display: none; }
+
+  /* Páginas em mobile ficam mais compactas */
+  .pg-intro-num { font-size: 120px; }
+  .pg-cover-brand { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .bl-title { font-size: 42px; }
+  .br-book  { height: min(520px, calc(100vh - 160px)); }
+}
+
+/* ── Scroll reveal na landing ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.bl-content > * {
+  animation: fadeUp 0.7s ease both;
+}
+.bl-eyebrow   { animation-delay: 0.05s; }
+.bl-title     { animation-delay: 0.15s; }
+.bl-desc      { animation-delay: 0.25s; }
+.bl-cards     { animation-delay: 0.35s; }
+.bl-hint      { animation-delay: 0.45s; }
