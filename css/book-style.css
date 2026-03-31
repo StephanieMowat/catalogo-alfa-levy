@@ -17,8 +17,8 @@
   --cream-dk:  #f0e8d8;
   --warm:      #ede4d0;
   --ink:       #1a1020;
-  --text:      #2a1e38;
-  --muted:     rgba(42,30,56,0.45);
+  --text:      #59476e;
+  --muted:     rgba(63, 45, 83, 0.45);
 }
 
 /* ── RESET ────────────────────────────────────────────────── */
@@ -74,7 +74,7 @@ body {
   font-size: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -130,7 +130,7 @@ body {
 .bl-desc {
   font-size: 13px;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255, 255, 255, 0.856);
   margin-bottom: 60px;
   max-width: 500px;
 }
@@ -178,7 +178,7 @@ body {
   border-color: rgba(200,160,58,0.35);
 }
 .bl-card--featured:hover {
-  background: rgba(200,160,58,0.1);
+  background: rgba(199, 160, 61, 0.1);
   border-color: var(--gold);
 }
 
@@ -217,7 +217,7 @@ body {
 .bl-card-sub {
   font-size: 11px;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.541);
   line-height: 1.6;
   margin-bottom: 28px;
 }
@@ -235,7 +235,7 @@ body {
 .bl-hint {
   font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.712);
   text-transform: uppercase;
 }
 
@@ -245,13 +245,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(200,160,58,0.08);
+  border-top: 1px solid rgba(200, 160, 58, 0.349);
   position: relative; z-index: 10;
 }
 .bl-footer span {
   font-size: 10px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.719);
   text-transform: uppercase;
 }
 .bl-footer a {
@@ -260,7 +260,7 @@ body {
   gap: 8px;
   font-size: 10px;
   letter-spacing: 3px;
-  color: rgba(200,160,58,0.5);
+  color: rgba(200, 160, 58, 0.658);
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -332,7 +332,7 @@ body {
 .br-header-fabric {
   font-size: 11px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.418);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -349,7 +349,7 @@ body {
 .br-counter {
   font-size: 10px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.712);
   white-space: nowrap;
 }
 
@@ -403,8 +403,8 @@ body {
   max-width: 960px;
   transform-style: preserve-3d;
   box-shadow:
-    0 40px 120px rgba(0,0,0,0.7),
-    0 0 0 1px rgba(200,160,58,0.12);
+    0 40px 120px rgba(0, 0, 0, 0.521),
+    0 0 0 1px rgba(200, 160, 58, 0.164);
 }
 
 /* ── Páginas ── */
@@ -556,7 +556,7 @@ body {
 .br-progress-bar {
   width: 120px;
   height: 2px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.199);
   position: relative;
   overflow: hidden;
 }
@@ -569,7 +569,7 @@ body {
 .br-progress-label {
   font-size: 10px;
   letter-spacing: 3px;
-  color: rgba(255,255,255,0.25);
+  color: rgb(255, 255, 255);
   white-space: nowrap;
 }
 
@@ -608,7 +608,7 @@ body {
 
 /* ── Capa do livro ── */
 .pg-cover {
-  background: linear-gradient(160deg, var(--grape) 0%, var(--deep) 60%, #06020e 100%);
+  background: linear-gradient(160deg, var(--grape) 0%, var(--deep) 60%, #06020ee7 100%);
   align-items: center;
   justify-content: center;
   position: relative;
@@ -619,7 +619,7 @@ body {
   position: absolute;
   top: -30%; left: -30%;
   width: 160%; height: 160%;
-  background: radial-gradient(ellipse at 30% 40%, rgba(200,160,58,0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 30% 40%, rgba(200, 160, 58, 0.151) 0%, transparent 60%);
 }
 .pg-cover::after {
   content: '';
@@ -630,7 +630,7 @@ body {
       0deg,
       transparent,
       transparent 50px,
-      rgba(255,255,255,0.012) 50px,
+      rgba(255, 255, 255, 0) 50px,
       rgba(255,255,255,0.012) 51px
     );
 }
@@ -650,7 +650,7 @@ body {
   font-size: 9px;
   letter-spacing: 7px;
   text-transform: uppercase;
-  color: rgba(200,160,58,0.55);
+  color: rgba(200, 160, 58, 0.623);
 }
 
 .pg-cover-line {
@@ -685,14 +685,14 @@ body {
 .pg-cover-count {
   font-size: 10px;
   letter-spacing: 5px;
-  color: rgba(200,160,58,0.4);
+  color: rgba(200, 160, 58, 0.473);
   text-transform: uppercase;
 }
 
 .pg-cover-footer {
   font-size: 9px;
   letter-spacing: 5px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.37);
   text-transform: uppercase;
   margin-top: 4px;
 }
@@ -714,7 +714,7 @@ body {
   font-size: clamp(100px, 16vw, 180px);
   font-weight: 600;
   line-height: 1;
-  color: rgba(200,160,58,0.07);
+  color: rgba(200, 160, 58, 0.493);
   user-select: none;
   pointer-events: none;
   letter-spacing: -5px;
@@ -730,7 +730,7 @@ body {
   font-size: 9px;
   letter-spacing: 7px;
   text-transform: uppercase;
-  color: rgba(200,160,58,0.55);
+  color: rgba(200, 160, 58, 0.705);
   margin-bottom: 16px;
 }
 
@@ -763,34 +763,46 @@ body {
 
 .pg-intro-wm {
   position: absolute;
-  bottom: 28px;
+  bottom: 55px;
   right: 32px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 10px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(42,30,56,0.15);
+  color: rgba(42, 30, 56, 0.37);
   user-select: none;
 }
 
 /* ── Página de foto ── */
 .pg-photo {
   background: #1a1020;
-  position: relative;
+  position: absolute;
+  inset: 0;
 }
 
-.pg-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* --- Ajuste da Imagem Intro (Centralizada e Responsiva) --- */
+.pg-intro img {
+  position: absolute;
+  /* Centralização perfeita */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Definimos o tamanho máximo que ela pode ocupar */
+  width: 90%; 
+  height: 75vh; /* Ocupa 60% da altura da tela, deixando bordas em cima/baixo */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .pg-photo-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   padding: 40px 20px 16px;
-  background: linear-gradient(to top, rgba(14,8,24,0.7), transparent);
+  background: linear-gradient(to top, rgba(14, 8, 24, 0.644), transparent);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -877,6 +889,17 @@ body {
 @media (max-width: 480px) {
   .bl-title { font-size: 42px; }
   .br-book  { height: min(520px, calc(100vh - 160px)); }
+
+}
+
+  /* --- Ajuste para Mobile / Modo Expansivo --- */
+@media (max-width: 768px) {
+  .pg-intro img {
+    width: 95%;   /* Um pouco mais larga no mobile */
+    height: 50vh; /* Altura um pouco menor para dar espaço ao texto */
+    top: 55%;     /* Empurra um pouco mais para baixo para não bater no título */
+  }
+
 }
 
 /* ── Scroll reveal na landing ── */
@@ -892,3 +915,4 @@ body {
 .bl-desc      { animation-delay: 0.25s; }
 .bl-cards     { animation-delay: 0.35s; }
 .bl-hint      { animation-delay: 0.45s; }
+
