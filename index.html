@@ -36,7 +36,8 @@
     <li><a href="#contato" class="nav-plain">Contato</a></li>
   </ul>
   <div class="nav-social">
-    <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" title="Instagram"><svg><use href="#ico-instagram"/></svg></a>
+    <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" title="Instagram Levy"><svg><use href="#ico-instagram"/></svg></a>
+    <a href="https://www.instagram.com/alfatextil/" target="_blank" title="Instagram Alfa"><svg><use href="#ico-instagram"/></svg></a>
     <a href="https://wa.me/5511957717470" target="_blank" title="WhatsApp"><svg><use href="#ico-whatsapp"/></svg></a>
   </div>
 </nav>
@@ -53,6 +54,7 @@
   <p class="hero-desc">Tecidos premium para moda praia, fitness e lingerie. Qualidade, variedade e atendimento especializado para sua confecção.</p>
   <div class="hero-actions">
     <a href="#lisos" class="btn-primary"><svg><use href="#ico-arrow"/></svg> Ver Catálogo</a>
+    <a href="book.html" class="btn-book"><svg style="width:14px;height:14px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg> Ver Book</a>
     <a href="https://wa.me/5511957717470?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos." target="_blank" class="btn-secondary"><svg><use href="#ico-whatsapp"/></svg> Fale Conosco</a>
   </div>
   <div class="hero-cats">
@@ -64,6 +66,43 @@
 
 
 <div class="band"></div>
+
+<!-- ══════════════════════════════════
+     FILTROS
+══════════════════════════════════ -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-bar-inner">
+    <span class="filter-bar-label">Filtrar por:</span>
+    <div class="filter-groups">
+
+      <div class="filter-group">
+        <button class="filter-group-toggle" onclick="toggleFilterGroup(this)">
+          Segmento <span class="filter-arrow">▾</span>
+        </button>
+        <div class="filter-group-items">
+          <label class="filter-item"><input type="checkbox" value="Moda Praia" onchange="applyFilters()"><span>Moda Praia</span></label>
+          <label class="filter-item"><input type="checkbox" value="Fitness" onchange="applyFilters()"><span>Fitness</span></label>
+          <label class="filter-item"><input type="checkbox" value="Lingerie" onchange="applyFilters()"><span>Lingerie</span></label>
+          <label class="filter-item"><input type="checkbox" value="Moda Casual" onchange="applyFilters()"><span>Moda Casual</span></label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-group-toggle" onclick="toggleFilterGroup(this)">
+          Categoria <span class="filter-arrow">▾</span>
+        </button>
+        <div class="filter-group-items">
+          <label class="filter-item"><input type="checkbox" value="LISOS" onchange="applyFilters()"><span>Lisos</span></label>
+          <label class="filter-item"><input type="checkbox" value="TEXTURIZADOS" onchange="applyFilters()"><span>Texturizados</span></label>
+          <label class="filter-item"><input type="checkbox" value="ESTAMPADOS" onchange="applyFilters()"><span>Estampados</span></label>
+        </div>
+      </div>
+
+    </div>
+    <button class="filter-clear" onclick="clearFilters()" id="btnClearFilters" style="display:none">✕ Limpar</button>
+  </div>
+  <div class="filter-active-tags" id="filterActiveTags"></div>
+</div>
 
 <!-- ══════════════════════════════════
      LISOS
@@ -104,8 +143,8 @@
 <div class="fabrics-wrap">
   <div class="fabrics-grid reveal">
 
-    <div class="fabric-card" onclick="openFabric('ANARRUGA_BRILHANTE')">
-      <img src="images/TEXTURIZADOS/ANARRUGA_BRILHANTE/page-01.jpg" alt="Anarruga Brilhante" loading="lazy">
+    <div class="fabric-card" data-key="ANARRUGA_BRILHANTE" onclick="openFabric('ANARRUGA_BRILHANTE')">
+      <img src="images/tecidos/TEXTURIZADOS/ANARRUGA_BRILHANTE/page-01.jpg" alt="Anarruga Brilhante" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">11 cores</span>
       <div class="fabric-info">
@@ -116,8 +155,8 @@
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('ANARRUGA_PRAIA')">
-      <img src="images/TEXTURIZADOS/ANARRUGA_PRAIA/page-01.jpg" alt="Anarruga Praia" loading="lazy">
+<div class="fabric-card" data-key="ANARRUGA_PRAIA" onclick="openFabric('ANARRUGA_PRAIA')">
+      <img src="images/tecidos/TEXTURIZADOS/ANARRUGA_PRAIA/page-01.jpg" alt="Anarruga Praia" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">25 cores</span>
       <div class="fabric-info">
@@ -128,8 +167,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('AREZZO')">
-      <img src="images/TEXTURIZADOS/AREZZO/page-01.jpg" alt="Arezzo" loading="lazy">
+    <div class="fabric-card" data-key="AREZZO" onclick="openFabric('AREZZO')">
+      <img src="images/tecidos/TEXTURIZADOS/AREZZO/page-01.jpg" alt="Arezzo" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">5 cores</span>
       <div class="fabric-info">
@@ -140,8 +179,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('BOUCLE')">
-      <img src="images/TEXTURIZADOS/BOUCLE/page-01.jpg" alt="Bouclê" loading="lazy">
+    <div class="fabric-card" data-key="BOUCLE" onclick="openFabric('BOUCLE')">
+      <img src="images/tecidos/TEXTURIZADOS/BOUCLE/page-01.jpg" alt="Bouclê" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">6 variações</span>
       <div class="fabric-info">
@@ -152,8 +191,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('BOUCLE_NERVUS')">
-      <img src="images/TEXTURIZADOS/BOUCLE_NERVUS/page-01.jpg" alt="Bouclê Nervus" loading="lazy">
+    <div class="fabric-card" data-key="BOUCLE_NERVUS" onclick="openFabric('BOUCLE_NERVUS')">
+      <img src="images/tecidos/TEXTURIZADOS/BOUCLE_NERVUS/page-01.jpg" alt="Bouclê Nervus" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -164,8 +203,8 @@
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('BOUCLE_PETALAS')">
-      <img src="images/TEXTURIZADOS/BOUCLE_PETALAS/page-01.jpg" alt="Bouclê Pétalas" loading="lazy">
+     <div class="fabric-card" data-key="BOUCLE_PETALAS" onclick="openFabric('BOUCLE_PETALAS')">
+      <img src="images/tecidos/TEXTURIZADOS/BOUCLE_PETALAS/page-01.jpg" alt="Bouclê Pétalas" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -175,9 +214,21 @@
         <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
       </div>
     </div>
+    
+    <div class="fabric-card" data-key="CANCUN" onclick="openFabric('CANCUN')">
+      <img src="images/tecidos/TEXTURIZADOS/CANCUN/page-01.jpg" alt="Cancún" loading="lazy">
+      <div class="fabric-overlay"></div>
+        <span class="fabric-pages-badge">8 variações</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Cancún</span>
+        <span class="fabric-tag">Moda · Moda Praia</span>
+        <p class="fabric-desc">Variação exclusiva do bouclê com relevo em formato de pétalas. Exclusividade e charme para sua coleção.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_BLACKOUT')">
-      <img src="images/TEXTURIZADOS/CANELADO_BLACKOUT/page-01.jpg" alt="Canelado Blackout" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_BLACKOUT" onclick="openFabric('CANELADO_BLACKOUT')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_BLACKOUT/page-01.jpg" alt="Canelado Blackout" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">7 cores</span>
       <div class="fabric-info">
@@ -188,8 +239,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_DE_COMPRESSAO')">
-      <img src="images/TEXTURIZADOS/CANELADO_DE_COMPRESSAO/page-01.jpg" alt="Canelado de Compressão" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_DE_COMPRESSAO" onclick="openFabric('CANELADO_DE_COMPRESSAO')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_DE_COMPRESSAO/page-01.jpg" alt="Canelado de Compressão" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">50+ cores</span>
       <div class="fabric-info">
@@ -200,8 +251,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_DIAGONAL')">
-      <img src="images/TEXTURIZADOS/CANELADO_DIAGONAL/page-01.jpg" alt="Canelado Diagonal" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_DIAGONAL" onclick="openFabric('CANELADO_DIAGONAL')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_DIAGONAL/page-01.jpg" alt="Canelado Diagonal" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">4 variações</span>
       <div class="fabric-info">
@@ -212,8 +263,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_EDEN')">
-      <img src="images/TEXTURIZADOS/CANELADO_EDEN/page-01.jpg" alt="Canelado Eden" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_EDEN" onclick="openFabric('CANELADO_EDEN')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_EDEN/page-01.jpg" alt="Canelado Eden" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">36 cores</span>
       <div class="fabric-info">
@@ -224,8 +275,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_FUJI')">
-      <img src="images/TEXTURIZADOS/CANELADO_FUJI/page-01.jpg" alt="Canelado Fuji" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_FUJI" onclick="openFabric('CANELADO_FUJI')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_FUJI/page-01.jpg" alt="Canelado Fuji" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">40+ cores</span>
       <div class="fabric-info">
@@ -236,8 +287,8 @@
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('CANELADO_LENATEX')">
-      <img src="images/TEXTURIZADOS/CANELADO_LENATEX/page-01.jpg" alt="Canelado Lenatex" loading="lazy">
+     <div class="fabric-card" data-key="CANELADO_LENATEX" onclick="openFabric('CANELADO_LENATEX')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_LENATEX/page-01.jpg" alt="Canelado Lenatex" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -248,8 +299,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_PILLE')">
-      <img src="images/TEXTURIZADOS/CANELADO_PILLE/page-01.jpg" alt="Canelado Pille" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_PILLE" onclick="openFabric('CANELADO_PILLE')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_PILLE/page-01.jpg" alt="Canelado Pille" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">14 cores</span>
       <div class="fabric-info">
@@ -260,8 +311,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_POLIESTER')">
-      <img src="images/TEXTURIZADOS/CANELADO_POLIESTER/page-01.jpg" alt="Canelado Poliéster" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_POLIESTER" onclick="openFabric('CANELADO_POLIESTER')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_POLIESTER/page-01.jpg" alt="Canelado Poliéster" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">18 cores</span>
       <div class="fabric-info">
@@ -272,8 +323,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_POWER')">
-      <img src="images/TEXTURIZADOS/CANELADO_POWER/page-01.jpg" alt="Canelado Power" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_POWER" onclick="openFabric('CANELADO_POWER')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_POWER/page-01.jpg" alt="Canelado Power" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">12 cores</span>
       <div class="fabric-info">
@@ -284,8 +335,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CANELADO_TREND_MOVE')">
-      <img src="images/TEXTURIZADOS/CANELADO_TREND_MOVE/page-01.jpg" alt="Canelado Trend Move" loading="lazy">
+    <div class="fabric-card" data-key="CANELADO_TREND_MOVE" onclick="openFabric('CANELADO_TREND_MOVE')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_TREND_MOVE/page-01.jpg" alt="Canelado Trend Move" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">5 variações</span>
       <div class="fabric-info">
@@ -296,8 +347,8 @@
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('CANELADO_WONDER')">
-      <img src="images/TEXTURIZADOS/CANELADO_WONDER/page-01.jpg" alt="Canelado Wonder" loading="lazy">
+     <div class="fabric-card" data-key="CANELADO_WONDER" onclick="openFabric('CANELADO_WONDER')">
+      <img src="images/tecidos/TEXTURIZADOS/CANELADO_WONDER/page-01.jpg" alt="Canelado Wonder" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">15+ cores</span>
       <div class="fabric-info">
@@ -308,8 +359,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CARMEL')">
-      <img src="images/TEXTURIZADOS/CARMEL/page-01.jpg" alt="Carmel" loading="lazy">
+    <div class="fabric-card" data-key="CARMEL" onclick="openFabric('CARMEL')">
+      <img src="images/tecidos/TEXTURIZADOS/CARMEL/page-01.jpg" alt="Carmel" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">26 cores</span>
       <div class="fabric-info">
@@ -320,8 +371,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CREPINHO')">
-      <img src="images/TEXTURIZADOS/CREPINHO/page-01.jpg" alt="Crepinho" loading="lazy">
+    <div class="fabric-card" data-key="CREPINHO" onclick="openFabric('CREPINHO')">
+      <img src="images/tecidos/TEXTURIZADOS/CREPINHO/page-01.jpg" alt="Crepinho" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">22 cores</span>
       <div class="fabric-info">
@@ -332,8 +383,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CREPONADO')">
-      <img src="images/TEXTURIZADOS/CREPONADO/page-01.jpg" alt="Creponado" loading="lazy">
+    <div class="fabric-card" data-key="CREPONADO" onclick="openFabric('CREPONADO')">
+      <img src="images/tecidos/TEXTURIZADOS/CREPONADO/page-01.jpg" alt="Creponado" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">9 cores</span>
       <div class="fabric-info">
@@ -344,8 +395,8 @@
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('CROCHE_SANTORINI')">
-      <img src="images/TEXTURIZADOS/CROCHE_SANTORINI/page-01.jpg" alt="Crochê Santorini" loading="lazy">
+     <div class="fabric-card" data-key="CROCHE_SANTORINI" onclick="openFabric('CROCHE_SANTORINI')">
+      <img src="images/tecidos/TEXTURIZADOS/CROCHE_SANTORINI/page-01.jpg" alt="Crochê Santorini" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">8 cores</span>
       <div class="fabric-info">
@@ -356,8 +407,8 @@
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CROCHETE')">
-      <img src="images/TEXTURIZADOS/CROCHETE/page-01.jpg" alt="Crochete" loading="lazy">
+    <div class="fabric-card" data-key="CROCHETE" onclick="openFabric('CROCHETE')">
+      <img src="images/tecidos/TEXTURIZADOS/CROCHETE/page-01.jpg" alt="Crochete" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">4 variações</span>
       <div class="fabric-info">
@@ -369,8 +420,8 @@ Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Id
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('CRUNCH_LISTRADO')">
-      <img src="images/TEXTURIZADOS/CRUNCH_LISTRADO/page-01.jpg" alt="Crunch Listrado" loading="lazy">
+    <div class="fabric-card" data-key="CRUNCH_LISTRADO" onclick="openFabric('CRUNCH_LISTRADO')">
+      <img src="images/tecidos/TEXTURIZADOS/CRUNCH_LISTRADO/page-01.jpg" alt="Crunch Listrado" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">7 cores</span>
       <div class="fabric-info">
@@ -381,8 +432,8 @@ Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Id
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('DIAMOND')">
-      <img src="images/TEXTURIZADOS/DIAMOND/page-01.jpg" alt="Diamond" loading="lazy">
+    <div class="fabric-card" data-key="DIAMOND" onclick="openFabric('DIAMOND')">
+      <img src="images/tecidos/TEXTURIZADOS/DIAMOND/page-01.jpg" alt="Diamond" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Diamond</span>
@@ -392,8 +443,20 @@ Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Id
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_BROCADO')">
-      <img src="images/TEXTURIZADOS/JACQUARD_BROCADO/page-01.jpg" alt="Jacquard Brocado" loading="lazy">
+      <div class="fabric-card" data-key="DOTS" onclick="openFabric('DOTS')">
+      <img src="images/tecidos/TEXTURIZADOS/DOTS/page-01.jpg" alt="Dots" loading="lazy">
+      <div class="fabric-overlay"></div>
+        <span class="fabric-pages-badge">28 cores</span>
+      <div class="fabric-info">
+        <span class="fabric-name">Dots</span>
+        <span class="fabric-tag">Moda Praia · Moda Casual </span>
+        <p class="fabric-desc">Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.</p>
+        <span class="fabric-cta">Ver cores <svg style="width:11px;height:11px;fill:currentColor"><use href="#ico-arrow"/></svg></span>
+      </div>
+    </div>
+
+    <div class="fabric-card" data-key="JACQUARD_BROCADO" onclick="openFabric('JACQUARD_BROCADO')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_BROCADO/page-01.jpg" alt="Jacquard Brocado" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">17 cores</span>
       <div class="fabric-info">
@@ -406,8 +469,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_CONCHAS')">
-      <img src="images/TEXTURIZADOS/JACQUARD_CONCHAS/page-01.jpg" alt="Jacquard Conchas" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_CONCHAS" onclick="openFabric('JACQUARD_CONCHAS')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_CONCHAS/page-01.jpg" alt="Jacquard Conchas" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">4 variações</span>
       <div class="fabric-info">
@@ -418,8 +481,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_CONCHINHAS')">
-      <img src="images/TEXTURIZADOS/JACQUARD_CONCHINHAS/page-01.jpg" alt="Jacquard Conchinhas" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_CONCHINHAS" onclick="openFabric('JACQUARD_CONCHINHAS')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_CONCHINHAS/page-01.jpg" alt="Jacquard Conchinhas" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">7 variações</span>
       <div class="fabric-info">
@@ -432,8 +495,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_DEGRADE')">
-      <img src="images/TEXTURIZADOS/JACQUARD_DEGRADE/page-01.jpg" alt="Jacquard Degradê" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_DEGRADE" onclick="openFabric('JACQUARD_DEGRADE')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_DEGRADE/page-01.jpg" alt="Jacquard Degradê" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">12 cores</span>
       <div class="fabric-info">
@@ -444,8 +507,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_GITA')">
-      <img src="images/TEXTURIZADOS/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_GITA" onclick="openFabric('JACQUARD_GITA')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_GITA/page-01.jpg" alt="Jacquard Gita" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -456,8 +519,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_KASHIMIR')">
-      <img src="images/TEXTURIZADOS/JACQUARD_KASHIMIR/page-01.jpg" alt="Jacquard Kashimir" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_KASHIMIR" onclick="openFabric('JACQUARD_KASHIMIR')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_KASHIMIR/page-01.jpg" alt="Jacquard Kashimir" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Kashimir</span>
@@ -467,8 +530,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_LEAF')">
-      <img src="images/TEXTURIZADOS/JACQUARD_LEAF/page-01.jpg" alt="Jacquard Leaf" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_LEAF" onclick="openFabric('JACQUARD_LEAF')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_LEAF/page-01.jpg" alt="Jacquard Leaf" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -481,8 +544,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('JACQUARD_LINES')">
-      <img src="images/TEXTURIZADOS/JACQUARD_LINES/page-01.jpg" alt="Jacquard Lines" loading="lazy">
+<div class="fabric-card" data-key="JACQUARD_LINES" onclick="openFabric('JACQUARD_LINES')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_LINES/page-01.jpg" alt="Jacquard Lines" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Lines</span>
@@ -492,8 +555,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_NILO')">
-      <img src="images/TEXTURIZADOS/JACQUARD_NILO/page-01.jpg" alt="Jacquard Nilo" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_NILO" onclick="openFabric('JACQUARD_NILO')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_NILO/page-01.jpg" alt="Jacquard Nilo" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Jacquard Nilo</span>
@@ -504,8 +567,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('JACQUARD_ONCA')">
-      <img src="images/TEXTURIZADOS/JACQUARD_ONCA/page-01.jpg" alt="Jacquard Onça" loading="lazy">
+     <div class="fabric-card" data-key="JACQUARD_ONCA" onclick="openFabric('JACQUARD_ONCA')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_ONCA/page-01.jpg" alt="Jacquard Onça" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">12 Cores</span>
       <div class="fabric-info">
@@ -517,8 +580,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('JACQUARD_PIQUET')">
-      <img src="images/TEXTURIZADOS/JACQUARD_PIQUET/page-01.jpg" alt="Jacquard Piquet" loading="lazy">
+<div class="fabric-card" data-key="JACQUARD_PIQUET" onclick="openFabric('JACQUARD_PIQUET')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_PIQUET/page-01.jpg" alt="Jacquard Piquet" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -530,8 +593,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-  <div class="fabric-card" onclick="openFabric('JACQUARD_WINNER')">
-      <img src="images/TEXTURIZADOS/JACQUARD_WINNER/page-01.jpg" alt="Jacquard Winner" loading="lazy">
+  <div class="fabric-card" data-key="JACQUARD_WINNER" onclick="openFabric('JACQUARD_WINNER')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_WINNER/page-01.jpg" alt="Jacquard Winner" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">5 variações</span>
       <div class="fabric-info">
@@ -542,8 +605,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('JACQUARD_YAHALOM')">
-      <img src="images/TEXTURIZADOS/JACQUARD_YAHALOM/page-01.jpg" alt="Jacquard Yahalom" loading="lazy">
+     <div class="fabric-card" data-key="JACQUARD_YAHALOM" onclick="openFabric('JACQUARD_YAHALOM')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_YAHALOM/page-01.jpg" alt="Jacquard Yahalom" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -554,8 +617,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('JACQUARD_ZIGZAG_PUZZLE')">
-      <img src="images/TEXTURIZADOS/JACQUARD_ZIGZAG_PUZZLE/page-01.jpg" alt="Jacquard Zigzag-Puzzle" loading="lazy">
+    <div class="fabric-card" data-key="JACQUARD_ZIGZAG_PUZZLE" onclick="openFabric('JACQUARD_ZIGZAG_PUZZLE')">
+      <img src="images/tecidos/TEXTURIZADOS/JACQUARD_ZIGZAG_PUZZLE/page-01.jpg" alt="Jacquard Zigzag-Puzzle" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -566,8 +629,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LASTEX_GLOSS')">
-      <img src="images/TEXTURIZADOS/LASTEX_GLOSS/page-01.jpg" alt="Lastex Gloss" loading="lazy">
+    <div class="fabric-card" data-key="LASTEX_GLOSS" onclick="openFabric('LASTEX_GLOSS')">
+      <img src="images/tecidos/TEXTURIZADOS/LASTEX_GLOSS/page-01.jpg" alt="Lastex Gloss" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">5 variações</span>
       <div class="fabric-info">
@@ -578,8 +641,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LASTEX_LIGHT')">
-      <img src="images/TEXTURIZADOS/LASTEX_LIGHT/page-01.jpg" alt="Lastex Light" loading="lazy">
+    <div class="fabric-card" data-key="LASTEX_LIGHT" onclick="openFabric('LASTEX_LIGHT')">
+      <img src="images/tecidos/TEXTURIZADOS/LASTEX_LIGHT/page-01.jpg" alt="Lastex Light" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">13 cores</span>
       <div class="fabric-info">
@@ -590,8 +653,8 @@ FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de ti
       </div>
     </div>
 
- <div class="fabric-card" onclick="openFabric('LIS')">
-      <img src="images/TEXTURIZADOS/LIS/page-01.jpg" alt="LIS" loading="lazy">
+ <div class="fabric-card" data-key="LIS" onclick="openFabric('LIS')">
+      <img src="images/tecidos/TEXTURIZADOS/LIS/page-01.jpg" alt="LIS" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">6 variações</span>
       <div class="fabric-info">
@@ -605,8 +668,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LUREX_3_DOURADO')">
-      <img src="images/TEXTURIZADOS/LUREX_3_DOURADO/page-01.jpg" alt="Lurex 3 Dourado" loading="lazy">
+    <div class="fabric-card" data-key="LUREX_3_DOURADO" onclick="openFabric('LUREX_3_DOURADO')">
+      <img src="images/tecidos/TEXTURIZADOS/LUREX_3_DOURADO/page-01.jpg" alt="Lurex 3 Dourado" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">6 variações</span>
       <div class="fabric-info">
@@ -617,8 +680,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LUREX_3_PRATA')">
-      <img src="images/TEXTURIZADOS/LUREX_3_PRATA/page-01.jpg" alt="Lurex 3 Prata" loading="lazy">
+    <div class="fabric-card" data-key="LUREX_3_PRATA" onclick="openFabric('LUREX_3_PRATA')">
+      <img src="images/tecidos/TEXTURIZADOS/LUREX_3_PRATA/page-01.jpg" alt="Lurex 3 Prata" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">25+ cores</span>
       <div class="fabric-info">
@@ -630,8 +693,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LUREX_4_E_OUTROS')">
-      <img src="images/TEXTURIZADOS/LUREX_4_E_OUTROS/page-01.jpg" alt="Lurex 4 e Outros" loading="lazy">
+    <div class="fabric-card" data-key="LUREX_4_E_OUTROS" onclick="openFabric('LUREX_4_E_OUTROS')">
+      <img src="images/tecidos/TEXTURIZADOS/LUREX_4_E_OUTROS/page-01.jpg" alt="Lurex 4 e Outros" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">20+ cores</span>
       <div class="fabric-info">
@@ -642,8 +705,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LUX_DUBAI')">
-      <img src="images/TEXTURIZADOS/LUX_DUBAI/page-01.jpg" alt="Lux Dubai" loading="lazy">
+    <div class="fabric-card" data-key="LUX_DUBAI" onclick="openFabric('LUX_DUBAI')">
+      <img src="images/tecidos/TEXTURIZADOS/LUX_DUBAI/page-01.jpg" alt="Lux Dubai" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Lux Dubai</span>
@@ -653,8 +716,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('LYCRA_JEANS')">
-      <img src="images/TEXTURIZADOS/LYCRA_JEANS/page-01.jpg" alt="Lycra Jeans" loading="lazy">
+    <div class="fabric-card" data-key="LYCRA_JEANS" onclick="openFabric('LYCRA_JEANS')">
+      <img src="images/tecidos/TEXTURIZADOS/LYCRA_JEANS/page-01.jpg" alt="Lycra Jeans" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Lycra Jeans</span>
@@ -664,8 +727,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('MACRAME')">
-      <img src="images/TEXTURIZADOS/MACRAME/page-01.jpg" alt="Macramê" loading="lazy">
+    <div class="fabric-card" data-key="MACRAME" onclick="openFabric('MACRAME')">
+      <img src="images/tecidos/TEXTURIZADOS/MACRAME/page-01.jpg" alt="Macramê" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -676,8 +739,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('MALIBU')">
-      <img src="images/TEXTURIZADOS/MALIBU/page-01.jpg" alt="Malibu" loading="lazy">
+    <div class="fabric-card" data-key="MALIBU" onclick="openFabric('MALIBU')">
+      <img src="images/tecidos/TEXTURIZADOS/MALIBU/page-01.jpg" alt="Malibu" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">15+ cores</span>
       <div class="fabric-info">
@@ -688,8 +751,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('MALTE')">
-      <img src="images/TEXTURIZADOS/MALTE/page-01.jpg" alt="Malte" loading="lazy">
+<div class="fabric-card" data-key="MALTE" onclick="openFabric('MALTE')">
+      <img src="images/tecidos/TEXTURIZADOS/MALTE/page-01.jpg" alt="Malte" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">11 cores</span>
       <div class="fabric-info">
@@ -700,8 +763,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('MARRAKESH')">
-      <img src="images/TEXTURIZADOS/MARRAKESH/page-01.jpg" alt="Marrekesh" loading="lazy">
+    <div class="fabric-card" data-key="MARRAKESH" onclick="openFabric('MARRAKESH')">
+      <img src="images/tecidos/TEXTURIZADOS/MARRAKESH/page-01.jpg" alt="Marrekesh" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">2 variações</span>
       <div class="fabric-info">
@@ -712,8 +775,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('MARSELHA')">
-      <img src="images/TEXTURIZADOS/MARSELHA/page-01.jpg" alt="Marselha" loading="lazy">
+    <div class="fabric-card" data-key="MARSELHA" onclick="openFabric('MARSELHA')">
+      <img src="images/tecidos/TEXTURIZADOS/MARSELHA/page-01.jpg" alt="Marselha" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">5 variações</span>
       <div class="fabric-info">
@@ -724,8 +787,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('MONTANA')">
-      <img src="images/TEXTURIZADOS/MONTANA/page-01.jpg" alt="Montana" loading="lazy">
+    <div class="fabric-card" data-key="MONTANA" onclick="openFabric('MONTANA')">
+      <img src="images/tecidos/TEXTURIZADOS/MONTANA/page-01.jpg" alt="Montana" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">11 cores</span>
       <div class="fabric-info">
@@ -736,8 +799,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('POINTS')">
-      <img src="images/TEXTURIZADOS/POINTS/page-01.jpg" alt="Points" loading="lazy">
+    <div class="fabric-card" data-key="POINTS" onclick="openFabric('POINTS')">
+      <img src="images/tecidos/TEXTURIZADOS/POINTS/page-01.jpg" alt="Points" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">11 cores</span>
       <div class="fabric-info">
@@ -748,8 +811,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('POSITANO')">
-      <img src="images/TEXTURIZADOS/POSITANO/page-01.jpg" alt="Positano" loading="lazy">
+    <div class="fabric-card" data-key="POSITANO" onclick="openFabric('POSITANO')">
+      <img src="images/tecidos/TEXTURIZADOS/POSITANO/page-01.jpg" alt="Positano" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -760,8 +823,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('ROCKS')">
-      <img src="images/TEXTURIZADOS/ROCKS/page-01.jpg" alt="Rocks" loading="lazy">
+<div class="fabric-card" data-key="ROCKS" onclick="openFabric('ROCKS')">
+      <img src="images/tecidos/TEXTURIZADOS/ROCKS/page-01.jpg" alt="Rocks" loading="lazy">
       <div class="fabric-overlay"></div>
         <span class="fabric-pages-badge">3 variações</span>
       <div class="fabric-info">
@@ -772,8 +835,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('SAINT_MARTIN')">
-      <img src="images/TEXTURIZADOS/SAINT_MARTIN/page-01.jpg" alt="Saint Martin" loading="lazy">
+     <div class="fabric-card" data-key="SAINT_MARTIN" onclick="openFabric('SAINT_MARTIN')">
+      <img src="images/tecidos/TEXTURIZADOS/SAINT_MARTIN/page-01.jpg" alt="Saint Martin" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">20+ cores</span>
       <div class="fabric-info">
@@ -784,8 +847,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('SEREIA')">
-      <img src="images/TEXTURIZADOS/SEREIA/page-01.jpg" alt="Sereia" loading="lazy">
+    <div class="fabric-card" data-key="SEREIA" onclick="openFabric('SEREIA')">
+      <img src="images/tecidos/TEXTURIZADOS/SEREIA/page-01.jpg" alt="Sereia" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">4 variações</span>
       <div class="fabric-info">
@@ -796,8 +859,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('SUKUZA')">
-      <img src="images/TEXTURIZADOS/SUKUZA/page-01.jpg" alt="Sukuza" loading="lazy">
+     <div class="fabric-card" data-key="SUKUZA" onclick="openFabric('SUKUZA')">
+      <img src="images/tecidos/TEXTURIZADOS/SUKUZA/page-01.jpg" alt="Sukuza" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Sukuza</span>
@@ -807,8 +870,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-    <div class="fabric-card" onclick="openFabric('TEXAS')">
-      <img src="images/TEXTURIZADOS/TEXAS/page-01.jpg" alt="Texas" loading="lazy">
+    <div class="fabric-card" data-key="TEXAS" onclick="openFabric('TEXAS')">
+      <img src="images/tecidos/TEXTURIZADOS/TEXAS/page-01.jpg" alt="Texas" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">15+ cores</span>
       <div class="fabric-info">
@@ -819,8 +882,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-     <div class="fabric-card" onclick="openFabric('VERONA')">
-      <img src="images/TEXTURIZADOS/VERONA/page-01.jpg" alt="Verona" loading="lazy">
+     <div class="fabric-card" data-key="VERONA" onclick="openFabric('VERONA')">
+      <img src="images/tecidos/TEXTURIZADOS/VERONA/page-01.jpg" alt="Verona" loading="lazy">
       <div class="fabric-overlay"></div>
       <span class="fabric-pages-badge">25+ cores</span>
       <div class="fabric-info">
@@ -853,8 +916,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
 <div class="fabrics-wrap">
   <div class="fabrics-grid reveal">
 
-     <div class="fabric-card" onclick="openFabric('SARDINHA')">
-      <img src="images/ESTAMPADOS/SARDINHA/page-01.jpg" alt="Sardinha" loading="lazy">
+     <div class="fabric-card" data-key="SARDINHA" onclick="openFabric('SARDINHA')">
+      <img src="images/tecidos/ESTAMPADOS/SARDINHA/page-01.jpg" alt="Sardinha" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Sardinha</span>
@@ -864,8 +927,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       </div>
     </div>
 
-<div class="fabric-card" onclick="openFabric('SARDINHAS')">
-      <img src="images/ESTAMPADOS/SARDINHAS/page-01.jpg" alt="Sardinhas" loading="lazy">
+<div class="fabric-card" data-key="SARDINHAS" onclick="openFabric('SARDINHAS')">
+      <img src="images/tecidos/ESTAMPADOS/SARDINHAS/page-01.jpg" alt="Sardinhas" loading="lazy">
       <div class="fabric-overlay"></div>
       <div class="fabric-info">
         <span class="fabric-name">Sardinhas</span>
@@ -890,6 +953,9 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
     <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" class="btn-ig">
       <svg><use href="#ico-instagram"/></svg> @levytextil456
     </a>
+    <a href="https://www.instagram.com/alfatextil/" target="_blank" class="btn-ig">
+      <svg><use href="#ico-instagram"/></svg> @alfatextil
+    </a>
   </div>
 </section>
 
@@ -900,7 +966,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       <div class="footer-logo">Alfa <span>&</span> Levy</div>
       <p>Distribuidora especializada em tecidos para moda praia, fitness e lingerie. Qualidade e variedade para sua confecção.</p>
       <div class="footer-social">
-        <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank"><svg><use href="#ico-instagram"/></svg></a>
+        <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" title="@levytextil456"><svg><use href="#ico-instagram"/></svg></a>
+        <a href="https://www.instagram.com/alfatextil/" target="_blank" title="@alfatextil"><svg><use href="#ico-instagram"/></svg></a>
         <a href="https://wa.me/5511957717470" target="_blank"><svg><use href="#ico-whatsapp"/></svg></a>
       </div>
     </div>
@@ -925,7 +992,8 @@ Possui certificação OEKO-TEX, garantindo que não há químicos nocivos aos us
       <h4>Contato</h4>
       <ul>
         <li><a href="https://wa.me/5511957717470" target="_blank">WhatsApp</a></li>
-        <li><a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank">Instagram</a></li>
+        <li><a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank">Instagram Levy</a></li>
+        <li><a href="https://www.instagram.com/alfatextil/" target="_blank">Instagram Alfa</a></li>
       </ul>
     </div>
   </div>
@@ -1031,6 +1099,7 @@ const FABRICS = {
   BOUCLE:              { name:'Bouclê',              category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Textura bouclê clássica com laçinhos característicos. Tecido nobre para peças com personalidade e sofisticação.', pages:7,  colorsTitle:'Cores Disponíveis' },
   BOUCLE_NERVUS:       { name:'Bouclê Nervus',      category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Textura bouclê com nervuras em relevo. Visual moderno e sofisticado para suas coleções.', pages:3,  colorsTitle:'Variações' },
   BOUCLE_PETALAS:      { name:'Bouclê Pétalas',      category:'TEXTURIZADOS',    tag:'Moda · Moda Praia',               desc:'Variação exclusiva do bouclê com relevo em formato de pétalas. Exclusividade e charme para sua coleção.', pages:3,  colorsTitle:'Variações' },
+  CANCUN:              { name:'Cancún',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda Casual',        desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:8, colorsTitle:'Cores Disponíveis' },
   CANELADO_BLACKOUT:   { name:'Canelado Blackout',   category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura canelada com efeito blackout. Ideal para peças de moda praia e casual com estilo e personalidade.', pages:8, colorsTitle:'Cores Disponíveis' },
   CANELADO_DE_COMPRESSAO:{ name:'Canelado Compressão', category:'TEXTURIZADOS',  tag:'Fitness · Moda Praia',            desc:'Produzida em poliamida brilhante com elastano, a malha Canelado de Compressão® se destaca pelo seu mini canelado com toque extremamente sedoso, entregando um visual elegante e sofisticado. Com gramatura média, oferece boa compressão e excelente cobertura, garantindo segurança e conforto mesmo durante a prática de atividades físicas. É a escolha ideal para leggings, tops e também para peças da linha praia, unindo performance, estilo e versatilidade em uma única base. FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.', pages:50, colorsTitle:'Cores Disponíveis', rendimento:'2,76m/kg', gramatura:'290g | 1,25m', composicao:'73,88% Poliamida, 26,12% Elastano', attributes:['01.FITNESS.jpg','02.PRAIA2.jpg','14.BRILHANTE.jpg','16.COMPRESSAO.jpg','06.SOLAR.jpg'], bookUrl: 'book.html?fabric=CANELADO_DE_COMPRESSAO' }, /* ex: 'book.html?fabric=CANELADO_DE_COMPRESSAO' — cole o link do book quando criar as fotos */
   CANELADO_DIAGONAL:   { name:'Canelado Diagonal',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',                 desc:'Textura canelada diagonal com toque macio e visual moderno. Ideal para peças de moda praia e casual com estilo e personalidade.', pages:5, colorsTitle:'Variações' },
@@ -1049,6 +1118,7 @@ const FABRICS = {
   CROCHETE:            { name:'Crochete',            category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Casual',   desc:'Com estrutura dupla e alta gramatura, a malha CROCHETE possui textura inspirada nos produtos artesanais, com aparência rústica e efeito de crochê produzido à mão. Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Ideal para peças da moda praia, pode ser utilizado no segmento Fitness e em peças de moda casual.', pages:5,  colorsTitle:'Variações', rendimento:'1,68m/KG', gramatura:'450g | 1,32m', composicao:'80% Poliamida, 20% Elastano', attributes:['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','19.ALTA-COBERTURA.jpg','05.TOQUE-MACIO.jpg','06.SOLAR.jpg'] },
   CRUNCH_LISTRADO:     { name:'Crunch Listrado',     category:'TEXTURIZADOS',    tag:'Moda Praia · Moda Casual',        desc:'Com estrutura dupla e aparência crepada, a malha CRUNCH LISTRADO combina o design clássico de listras com uma textura única, adicionando um toque exclusivo e sofisticado. Confeccionada em poliamida opaca com elastano, proporciona conforto, maciez e excelente cobertura. Perfeita para a moda praia, também é uma escolha versátil para compor looks sofisticados e modernos na moda casual. FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.', pages:8,  colorsTitle:'Cores Disponíveis', rendimento:'1,90m/KG', gramatura:'350g | 1,50m', composicao:'92% Poliamida, 8% Elastano', attributes:['02.PRAIA2.jpg','04.MODA.jpg','13.ELASTICIDADE1.jpg','06.SOLAR.jpg'], bookUrl: 'book.html?fabric=CRUNCH_LISTRADO' }, /* ex: 'book.html?fabric=CRUNCH_LISTRADO' — cole o link do book quando criar as fotos */
   DIAMOND:             { name:'Diamond',             category:'TEXTURIZADOS',    tag:'Fitness · Lingerie',              desc:'Toque acetinado e brilho sutil. Acabamento liso de alta qualidade para peças sofisticadas.', pages:2,  colorsTitle:'Variações' },
+  DOTS:                { name:'Dots',                category:'TEXTURIZADOS',    tag:'Moda Praia · Moda Casual',        desc:'Textura de bolinhas em relevo para um visual divertido e moderno. Ideal para peças de moda praia e casual com estilo e personalidade.', pages:29,  colorsTitle:'Cores Disponíveis' },
   JACQUARD_BROCADO:    { name:'Jacquard Brocado',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'A malha JACQUARD BROCADO possui textura trabalhada com retenção e bastante volume, enriquecendo e agregando valor às peças, mesmo quando em modelagens básicas. Em poliamida opaca com elastano, é comercialmente usada com o lado avesso para fora. Versátil, possui elasticidade e compressão ajustadas. É confortável e pode ser utilizada também na moda praia ou casual. Nas peças Fitness, garante segurança por ser zero transparência durante a realização dos movimentos. FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.', pages:18, colorsTitle:'Cores Disponíveis', rendimento:'2,64m/KG', gramatura:'330g | 1,5m', composicao:'80% Poliamida, 20% Elastano', attributes:['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','16.COMPRESSAO.jpg','06.SOLAR.jpg',], bookUrl: 'book.html?fabric=JACQUARD_BROCADO' }, /* ex: 'book.html?fabric=JACQUARD_BROCADO' — cole o link do book quando criar as fotos */
   JACQUARD_CONCHAS:    { name:'Jacquard Conchas',    category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Motivo de conchas tecido em jacquard. Inspiração marinha com acabamento sofisticado.', pages:5,  colorsTitle:'Variações' },
   JACQUARD_CONCHINHAS: { name:'Jacquard Conchinhas', category:'TEXTURIZADOS',    tag:'Moda Praia',                      desc:'Produto elastizado com motivo de CONCHAS em poliamida brilhante e fundo opaco, possui toque extremamente sedoso e aparência sofisticada. Chique e clássico, foi idealizado para peças da moda praia, com elastidade confortável e arte em tamanho ideal para preencher pequenas áreas. FPU 50+ vitalício devido ao fio de poliamida ser enriquecido com dióxido de titânio em sua massa.', pages:8,  colorsTitle:'Variações', rendimento:'2,01m/KG', gramatura:'310g | 1,6m', composicao:'93,27% Poliamida, 6,73% Elastano', attributes:['02.PRAIA2.jpg','14.BRILHANTE.jpg','13.ELASTICIDADE1.JPG','06.SOLAR.jpg'], bookUrl: 'book.html?fabric=JACQUARD_CONCHINHAS' }, /* ex: 'book.html?fabric=JACQUARD_CONCHINHAS' — cole o link do book quando criar as fotos */
@@ -1080,7 +1150,7 @@ const FABRICS = {
   POINTS:              { name:'Points',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:12,  colorsTitle:'Cores Disponíveis' },
   POSITANO:            { name:'Positano',            category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:4,  colorsTitle:'Variações' },
   ROCKS:               { name:'Rocks',               category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura rochosa com toque macio e caimento fluido. Ideal para peças com personalidade e estilo marcante.', pages:4,  colorsTitle:'Variações' },
-  SAINT_MARTIN:        { name:'Saint Martin',        category:'TEXTURIZADOS',    tag:'Moda Casual · Moda Praia',         desc:'Com visual tridimensional, o artigo confere tecnologia com conforto. Proporciona visual de tecido feito a mão, tem bom caimento e boa elasticidade para permitir a confecção de peças com modelagens drapeadas e torcidas. Foi desenvolvido para atender ao mercado de praa com forte impacto visual na confecção de biquínis e maiôs.', pages:22,  colorsTitle:'Cores Disponíveis', rendimento:'3,57m/kg', gramatura:'255g/m²', composicao:'89% Poliamida, 11% Elastano', attributes:['04.MODA.jpg','02.PRAIA2.jpg','12.CONFORTO-TERMICO.jpg','13.ELASTICIDADE1.jpg'], bookUrl: 'book.html?fabric=SAINT_MARTIN' }, /* ex: 'book.html?fabric=SAINT_MARTIN' — cole o link do book quando criar as fotos */
+  SAINT_MARTIN:        { name:'Saint Martin',        category:'TEXTURIZADOS',    tag:'Moda Casual · Moda Praia',         desc:'Com visual tridimensional, o artigo confere tecnologia com conforto. Proporciona visual de tecido feito a mão, tem bom caimento e boa elasticidade para permitir a confecção de peças com modelagens drapeadas e torcidas. Foi desenvolvido para atender ao mercado de praa com forte impacto visual na confecção de biquínis e maiôs.', pages:24,  colorsTitle:'Cores Disponíveis', rendimento:'3,57m/kg', gramatura:'255g/m²', composicao:'89% Poliamida, 11% Elastano', attributes:['04.MODA.jpg','02.PRAIA2.jpg','12.CONFORTO-TERMICO.jpg','13.ELASTICIDADE1.jpg'], bookUrl: 'book.html?fabric=SAINT_MARTIN' }, /* ex: 'book.html?fabric=SAINT_MARTIN' — cole o link do book quando criar as fotos */
   SEREIA:              { name:'Sereia',              category:'TEXTURIZADOS',    tag:'Moda Praia · Moda',               desc:'Textura leve e fluida com toque macio. Ideal para peças com caimento suave e conforto excepcional.', pages:5,  colorsTitle:'Variações' },
   SUKUZA:              { name:'Sukuza',              category:'TEXTURIZADOS',    tag:'Fitness',                         desc:'Reúne as melhores características de aplicação na confecção do segmento esportivo: power, elasticidade controlada e retorno e cobertura, aliados ao visual único texturado em relevo e refletivo, devido a mistura de fios opacos e brilhantes.', pages:2,  colorsTitle:'Cores Disponíveis', rendimento:'2,32m/kg', gramatura:'2,95g/m²', composicao:'75,47% Poliamida, 24,53% Elastano', attributes:['01.FITNESS.jpg','16.COMPRESSAO.jpg','15.KETTENSPORT.jpg','06.TOQUE-GELADO.jpg'], bookUrl: 'book.html?fabric=SUKUZA' }, /* ex: 'book.html?fabric=SUKUZA' — cole o link do book quando criar as fotos */
   TEXAS:               { name:'Texas',               category:'TEXTURIZADOS',    tag:'Moda Praia · Fitness · Moda Casual', desc:'O Noronha é uma super tendência para beachwear! Uma malha de textura com visual rústico e artesanal, que remete ao ponto do crochê, em poliamida, com toque macio e suave. Além de moda praia é um produto que pode ser usado para detalhes de peças esportivas, blusões, jaquetas e moda casual. Possui alongamento e elasticidade ideais para moda praia, sendo o produto perfeito para usar em modelagens de biquínis e maiôs', pages:17,  colorsTitle:'Cores Disponíveis', rendimento:'2,65m/kg', gramatura:'2,70g/m²', composicao:'', attributes:['02.PRAIA2.jpg','01.FITNESS.jpg',,'04.MODA.jpg','02.DRY.jpg'], bookUrl: 'book.html?fabric=TEXAS' }, /* ex: 'book.html?fabric=TEXAS' — cole o link do book quando criar as fotos */
@@ -1102,7 +1172,7 @@ function openFabric(key) {
   const f = FABRICS[key];
   if (!f) return;
 
-  document.getElementById('fabricModalCover').src = `images/${f.category}/${key}/${pageFile(1)}`;
+  document.getElementById('fabricModalCover').src = `images/tecidos/${f.category}/${key}/${pageFile(1)}`;
   document.getElementById('fabricModalName').innerHTML = f.name;
   document.getElementById('fabricModalTag').textContent = f.tag;
   document.getElementById('fabricModalDesc').textContent = f.desc;
@@ -1134,7 +1204,7 @@ function openFabric(key) {
     colorsSection.style.display = 'block';
 
     for (let i = 2; i <= f.pages; i++) {
-      const src = `images/${f.category}/${key}/${pageFile(i)}`;
+      const src = `images/tecidos/${f.category}/${key}/${pageFile(i)}`;
       currentLightboxImages.push(src);
       const idx = currentLightboxImages.length - 1;
       const div = document.createElement('div');
@@ -1185,6 +1255,79 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── FILTROS ── */
+function toggleFilterGroup(btn) {
+  const group = btn.closest('.filter-group');
+  const wasOpen = group.classList.contains('filter-group--open');
+  document.querySelectorAll('.filter-group').forEach(g => g.classList.remove('filter-group--open'));
+  if (!wasOpen) group.classList.add('filter-group--open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.filter-group')) {
+    document.querySelectorAll('.filter-group').forEach(g => g.classList.remove('filter-group--open'));
+  }
+});
+
+function getActiveFilters() {
+  const checks = document.querySelectorAll('#filterBar input[type=checkbox]:checked');
+  return { segment: [], category: [] };
+}
+
+function applyFilters() {
+  const allChecks = Array.from(document.querySelectorAll('#filterBar input[type=checkbox]:checked'));
+  const segValues = allChecks.filter(c => ['Moda Praia','Fitness','Lingerie','Moda Casual','Moda'].includes(c.value)).map(c => c.value);
+  const catValues = allChecks.filter(c => ['LISOS','TEXTURIZADOS','ESTAMPADOS'].includes(c.value)).map(c => c.value);
+
+  const cards = document.querySelectorAll('.fabric-card[data-key]');
+  let visCount = 0;
+  cards.forEach(card => {
+    const key = card.dataset.key;
+    const f = FABRICS[key];
+    if (!f) return;
+    const tag = f.tag || '';
+    const cat = f.category || '';
+
+    const segMatch = segValues.length === 0 || segValues.some(s => tag.includes(s));
+    const catMatch = catValues.length === 0 || catValues.includes(cat);
+
+    if (segMatch && catMatch) {
+      card.style.display = '';
+      visCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Show/hide category section headers based on visibility
+  document.querySelectorAll('.cat-section').forEach(sec => {
+    const id = sec.id; // lisos, texturizados, estampados
+    const wrap = sec.nextElementSibling;
+    if (!wrap || !wrap.classList.contains('fabrics-wrap')) return;
+    const visible = wrap.querySelectorAll('.fabric-card[data-key]:not([style*="display: none"]):not([style*="display:none"])');
+    const shouldHide = (catValues.length > 0 && !catValues.map(c => c.toLowerCase()).includes(id)) && visible.length === 0;
+    sec.style.display = shouldHide ? 'none' : '';
+    wrap.style.display = visible.length === 0 && allChecks.length > 0 ? 'none' : '';
+  });
+
+  // Active tags
+  const tagsEl = document.getElementById('filterActiveTags');
+  tagsEl.innerHTML = allChecks.map(c =>
+    `<span class="filter-tag">${c.nextElementSibling.textContent}<button onclick="uncheckFilter(this,'${c.value}')">×</button></span>`
+  ).join('');
+  document.getElementById('btnClearFilters').style.display = allChecks.length ? '' : 'none';
+}
+
+function uncheckFilter(btn, val) {
+  const input = document.querySelector(`#filterBar input[value="${val}"]`);
+  if (input) { input.checked = false; applyFilters(); }
+}
+
+function clearFilters() {
+  document.querySelectorAll('#filterBar input[type=checkbox]').forEach(c => c.checked = false);
+  applyFilters();
+}
+
 </script>
 </body>
 </html>
