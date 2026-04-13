@@ -43,17 +43,17 @@ body{background:var(--deep);font-family:'Jost',sans-serif;font-weight:300;overfl
 .bl-title em{font-style:italic;color:var(--lavender);display:block;}
 .bl-desc{font-size:13px;letter-spacing:2px;color:rgba(255,255,255,.856);margin-bottom:60px;max-width:500px;}
 .bl-cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;}
-.bl-card{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(200,160,58,.18);padding:36px 40px 28px;cursor:pointer;transition:all .4s;text-align:left;min-width:240px;flex:1;max-width:300px;overflow:hidden;}
+.bl-card{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(200,160,58,.18);padding:18px 40px 14px;cursor:pointer;transition:all .4s;text-align:left;min-width:240px;flex:1;max-width:300px;overflow:hidden;}
 .bl-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,160,58,.04) 0%,transparent 60%);opacity:0;transition:opacity .4s;}
 .bl-card:hover{border-color:rgba(200,160,58,.5);background:rgba(255,255,255,.07);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(200,160,58,.08);}
 .bl-card:hover::before{opacity:1;}
 .bl-card--featured{background:rgba(200,160,58,.06);border-color:rgba(200,160,58,.35);}
 .bl-card--featured:hover{background:rgba(199,160,61,.1);border-color:var(--gold);}
-.bl-card-top{display:flex;align-items:center;gap:8px;margin-bottom:20px;}
+.bl-card-top{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
 .bl-card-badge{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:rgba(200,160,58,.5);}
 .bl-card-badge-main{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding:3px 10px;border:1px solid rgba(200,160,58,.4);}
 .bl-card-name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:#fff;line-height:1;margin-bottom:12px;letter-spacing:-.5px;}
-.bl-card-sub{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.541);line-height:1.6;margin-bottom:28px;}
+.bl-card-sub{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.541);line-height:1.6;margin-bottom:12px;}
 .bl-card-arrow{color:var(--gold);opacity:.5;transition:all .3s;}
 .bl-card:hover .bl-card-arrow{opacity:1;transform:translateX(6px);}
 .bl-hint{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.712);text-transform:uppercase;}
@@ -276,7 +276,7 @@ body{background:var(--deep);font-family:'Jost',sans-serif;font-weight:300;overfl
 .pg-intro-name{word-break:break-word;hyphens:auto;margin-bottom:16px;}
 
 /* Ícones sociais na folha de intro */
-.pg-intro-icons{position:absolute;bottom:12px;left:14px;display:flex;gap:8px;align-items:center;}
+.pg-intro-icons{position:absolute;bottom:12px;left:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
 .pg-intro-icon-btn{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;text-decoration:none;transition:opacity .2s;opacity:.85;}
 .pg-intro-icon-btn:hover{opacity:1;}
 .pg-intro-icon-btn--wpp{background:#25D366;color:#fff;}
@@ -300,3 +300,10 @@ body{background:var(--deep);font-family:'Jost',sans-serif;font-weight:300;overfl
   .br-hdr-icon-btn--ig{display:none;}
   .bl-header-icon-btn--ig{display:none;}
 }
+
+/* ── Botão Visualizar Cores na folha intro ── */
+.pg-intro-icon-btn--levy{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);} /* @levytextil456 */
+.pg-intro-icon-btn--alfa{background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);}
+.pg-intro-btn-cores{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:rgba(63,45,83,.15);border:1px solid rgba(63,45,83,.3);color:rgba(63,45,83,.8);font-family:'Jost',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:0;transition:all .2s;white-space:nowrap;}
+.pg-intro-btn-cores:hover{background:rgba(63,45,83,.25);border-color:rgba(63,45,83,.5);color:var(--text);}
+.pg-intro-btn-cores svg{flex-shrink:0;}

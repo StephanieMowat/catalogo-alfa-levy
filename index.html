@@ -84,6 +84,7 @@
           <label class="filter-item"><input type="checkbox" value="Fitness" onchange="applyFilters()"><span>Fitness</span></label>
           <label class="filter-item"><input type="checkbox" value="Lingerie" onchange="applyFilters()"><span>Lingerie</span></label>
           <label class="filter-item"><input type="checkbox" value="Moda Casual" onchange="applyFilters()"><span>Moda Casual</span></label>
+          <label class="filter-item"><input type="checkbox" value="Moda" onchange="applyFilters()"><span>Moda</span></label>
         </div>
       </div>
 
@@ -1254,6 +1255,17 @@ document.addEventListener('keydown', e => {
 const obs = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
 }, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Auto-abrir tecido via URL param ?fabric=KEY ── */
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(location.search);
+  const fabricKey = params.get('fabric');
+  if (fabricKey && FABRICS[fabricKey]) {
+    // Scroll to fabric card then open modal
+    setTimeout(() => openFabric(fabricKey), 300);
+  }
+});
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 /* ── FILTROS ── */
